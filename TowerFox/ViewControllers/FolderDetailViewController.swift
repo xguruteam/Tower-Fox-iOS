@@ -296,24 +296,25 @@ class FolderDetailViewController: UIViewController {
         }
 
         // save to gallery
-        PHPhotoLibrary.shared().save(image: image, path: galleryPath) { (asset) in
-            DispatchQueue.main.async {
-                if let asset = asset {
-                    let toast  = Toast(text: "Successfully saved photo to Photos Gallery", duration: Delay.short)
-                    ToastView.appearance().backgroundColor = UIColor.appMainColor
-                    ToastView.appearance().textColor = .white
-                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
-                    toast.show()
-                }
-                else {
-                    let toast  = Toast(text: "Failed to save photo to Photos Gallery", duration: Delay.short)
-                    ToastView.appearance().backgroundColor = UIColor.appRedColor
-                    ToastView.appearance().textColor = .white
-                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
-                    toast.show()
-                }
-            }
-        }
+        // Skip for now, photos will be saved to gallery automatically after sync
+//        PHPhotoLibrary.shared().save(image: image, path: storage_loadObject("ProjectID")!) { (asset) in
+//            DispatchQueue.main.async {
+//                if let asset = asset {
+//                    let toast  = Toast(text: "Successfully saved photo to Photos Gallery", duration: Delay.short)
+//                    ToastView.appearance().backgroundColor = UIColor.appMainColor
+//                    ToastView.appearance().textColor = .white
+//                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
+//                    toast.show()
+//                }
+//                else {
+//                    let toast  = Toast(text: "Failed to save photo to Photos Gallery", duration: Delay.short)
+//                    ToastView.appearance().backgroundColor = UIColor.appRedColor
+//                    ToastView.appearance().textColor = .white
+//                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
+//                    toast.show()
+//                }
+//            }
+//        }
     }
 
     

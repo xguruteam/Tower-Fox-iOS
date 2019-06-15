@@ -14,6 +14,8 @@ import AWSS3
 import Alamofire
 import AFNetworking
 import SDWebImage
+import Photos
+
 let s3URI = "https://lifecycle-closeout-demo-photos.s3.amazonaws.com/"
 //let s3URI = "https://d24mkkhodirsc3.cloudfront.net/"
 
@@ -627,6 +629,19 @@ public class Sync {
             
             Alamofire.download(uri!, to: destination).response { (response) in
                 if (response.destinationURL?.path) != nil {
+                    
+                    print("--------------->\n\(response.destinationURL!)")
+                    
+                    let url = response.destinationURL!
+                    let path = url.path
+                    if let downloadedImage = UIImage(contentsOfFile: path) {
+                        let fileName = url.lastPathComponent
+                        let infos = fileName.split(separator: "_")
+                        if let projectID = infos.first {
+                            print("projectID: \(projectID)")
+                            PHPhotoLibrary.shared().save(image: downloadedImage, path: String(projectID))
+                        }
+                    }
                     DispatchQueue.main.async {
                         self.downloadCapturedCount = self.downloadCapturedCount + 1
                         if self.downloadCapturedCount < self.capturedImageNamesList.count {

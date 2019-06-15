@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class MainTabViewController: UITabBarController {
 
@@ -30,6 +31,13 @@ class MainTabViewController: UITabBarController {
         // remove default border
 
         // Do any additional setup after loading the view.
+        if PHPhotoLibrary.authorizationStatus() == .authorized {
+        } else {
+            PHPhotoLibrary.requestAuthorization({ (status) in
+                if status == .authorized {
+                }
+            })
+        }
     }
     
     override func viewDidLayoutSubviews() {
