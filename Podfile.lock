@@ -1,0 +1,100 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Alamofire (4.7.3)
+  - AWSAuthCore (2.6.26):
+    - AWSCore (= 2.6.26)
+  - AWSCognito (2.6.26):
+    - AWSCore (= 2.6.26)
+  - AWSCore (2.6.26)
+  - AWSMobileClient (2.6.26):
+    - AWSAuthCore (= 2.6.26)
+  - AWSS3 (2.6.26):
+    - AWSCore (= 2.6.26)
+  - CryptoSwift (0.11.0)
+  - DropDown (2.3.2)
+  - IQKeyboardManagerSwift (6.1.1)
+  - Reachability (3.2)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SideMenu (4.0.0)
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.1.0)
+  - Toaster (2.2.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Alamofire
+  - AWSCognito
+  - AWSMobileClient
+  - AWSS3
+  - CryptoSwift
+  - DropDown
+  - IQKeyboardManagerSwift
+  - Reachability
+  - SDWebImage
+  - SideMenu
+  - SQLite.swift
+  - SVProgressHUD
+  - SwiftyJSON
+  - Toaster
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Alamofire
+    - AWSAuthCore
+    - AWSCognito
+    - AWSCore
+    - AWSMobileClient
+    - AWSS3
+    - CryptoSwift
+    - DropDown
+    - IQKeyboardManagerSwift
+    - Reachability
+    - SDWebImage
+    - SideMenu
+    - SQLite.swift
+    - SVProgressHUD
+    - SwiftyJSON
+    - Toaster
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AWSAuthCore: bc6c8d7320eae8ef18939504d5a8a1588606c3a1
+  AWSCognito: a478efa37e614803ba4554a29ca1be69d70e0e43
+  AWSCore: 0177bb7e5616d967277b398e7a05ed7a228e6158
+  AWSMobileClient: 1800cc78a28d49ac4b03deef5aefae8395f952b3
+  AWSS3: 4d857a223704bd956e91a659aec17ba1896ee0a9
+  CryptoSwift: ad5208dd2aae0a764ea4ce2c2d34bd067cae67f0
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
+  IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
+
+PODFILE CHECKSUM: a5566e7235e5bd2f7b77ddf027c50a23427fcab7
+
+COCOAPODS: 1.7.0
