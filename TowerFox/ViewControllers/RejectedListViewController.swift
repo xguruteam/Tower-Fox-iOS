@@ -41,34 +41,64 @@ class RejectedListViewController: UIViewController {
         self.showHUD()
         Database.sharedInstance.displayRejects { (results) in
             self.rejects = results
-            var prev: RejectDisplayModel!
             self.rejectHeaders.removeAll()
+            self.rejectDisplayList.removeAll()
+            
             var rejectArr: [RejectDisplayModel] = []
-            for i in 0..<self.rejects.count {
-                let rej = self.rejects[i]
+            var header: String = ""
+            var prev: RejectDisplayModel!
+
+            var tempArr:[[String: Any]] = []
+            
+            for rej in self.rejects {
                 if prev != nil {
                     if prev.ProjectID == rej.ProjectID && prev.CategoryName == rej.CategoryName {
                         rejectArr.append(rej)
                     }else{
-                        if self.rejectHeaders.count > 0 {
-                            self.rejectDisplayList.append(rejectArr)
-                            self.rejectHeaders.append(String(format: "%@ >> %@", rej.ProjectID, rej.CategoryName))
-                            rejectArr.removeAll()
-                            rejectArr.append(rej)
-                        }else{
-                            rejectArr.removeAll()
-                        }
+                        rejectArr.sort(by: { (first, second) -> Bool in
+                            let name1 = first.ItemName!
+                            let name2 = second.ItemName!
+                            let result = name1.compare(name2)
+                            return result == .orderedAscending
+                        })
+                        tempArr.append(["header": header, "arr": rejectArr])
+                        header = String(format: "%@ >> %@", rej.ProjectID, rej.CategoryName)
+                        rejectArr.removeAll()
+                        rejectArr.append(rej)
                     }
                 }else{
-                    self.rejectHeaders.append(String(format: "%@ >> %@", rej.ProjectID, rej.CategoryName))
+                    header = String(format: "%@ >> %@", rej.ProjectID, rej.CategoryName)
                     rejectArr.removeAll()
                     rejectArr.append(rej)
                 }
                 prev = rej
             }
-            if self.rejectDisplayList.count < self.rejectHeaders.count {
-                self.rejectDisplayList.append(rejectArr)
+            if header.count > 0 {
+                rejectArr.sort(by: { (first, second) -> Bool in
+                    let name1 = first.ItemName!
+                    let name2 = second.ItemName!
+                    let result = name1.compare(name2)
+                    return result == .orderedAscending
+                })
+                tempArr.append(["header": header, "arr": rejectArr])
             }
+            
+            tempArr.sort(by: { (first, second) -> Bool in
+                let header1 = first["header"] as! String
+                let header2 = second["header"] as! String
+                let result = header1.compare(header2)
+                return result == .orderedAscending
+            })
+            
+            (self.rejectHeaders, self.rejectDisplayList) = tempArr.reduce(into: (self.rejectHeaders, self.rejectDisplayList), { (result, item) in
+                var (headers, displayList) = result
+                let header = item["header"] as! String
+                let list = item["arr"] as!  [RejectDisplayModel]
+                headers.append(header)
+                displayList.append(list)
+                result = (headers, displayList)
+            })
+            
             self.tableView.setContentOffset(CGPoint.zero, animated: true)
             self.tableView.reloadData()
             self.hideHUD()

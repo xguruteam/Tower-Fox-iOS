@@ -117,6 +117,13 @@ public class Database {
                     projectsGlobalArray.append(project.ProjectID)
                 }
             }
+            projectDisplayModels.sort { (first, second) -> Bool in
+                let id1 = first.ProjectID!
+                let id2 = second.ProjectID!
+                let result = id1.compare(id2)
+                return result == .orderedAscending
+                
+            }
             completionHandler(projectDisplayModels)
 
         }catch let error {
@@ -305,25 +312,54 @@ public class Database {
 
             }
             
-            self.categories.sort { (first, second) -> Bool in
-                
-                let type = first.type
-                if type == "Category" {
-                    let name1 = first.CategoryName
-                    let name2 = second.CategoryName
-                    let result = name1.compare(name2)
-                    return result == .orderedAscending
+            var (rejectedList, todoList, pendingList, approvedList, categoryList) = self.categories.reduce(([], [], [], [], [])) { (result, model) -> ([CategoryDisplayModel], [CategoryDisplayModel], [CategoryDisplayModel], [CategoryDisplayModel], [CategoryDisplayModel]) in
+                var (rejectedList, todoList, pendingList, approvedList, categoryList) = result
+                if model.type == "Items" {
+                    if model.IStatus == StatusEnum.TAKEPIC.rawValue || model.IStatus == StatusEnum.RESETPHOTO.rawValue {
+                        todoList.append(model)
+                    }else if model.IStatus == StatusEnum.PICTAKEN.rawValue {
+                        pendingList.append(model)
+                    }else if model.IStatus == StatusEnum.UPLOADED.rawValue || model.IStatus == StatusEnum.RESETPHOTO.rawValue {
+                        pendingList.append(model)
+                    }else if model.IStatus == StatusEnum.APPROVED.rawValue || model.IStatus == StatusEnum.RESETPHOTO.rawValue {
+                        approvedList.append(model)
+                    }else if model.IStatus == StatusEnum.REJECTED.rawValue || model.IStatus == StatusEnum.RESETPHOTO.rawValue {
+                        rejectedList.append(model)
+                    }
+                } else {
+                    if model._required != 0 || model._rejected != 0 || model._taken != 0 || model._approved != 0{
+                        categoryList.append(model)
+                    }
                 }
-                else if type == "Items" {
-                    let name1 = first.ItemName
-                    let name2 = second.ItemName
-                    let result = name1.compare(name2)
-                    
-                    return result == .orderedAscending
-                }
-                
-                return false
+                return (rejectedList, todoList, pendingList, approvedList, categoryList)
             }
+            
+            let comparator: (CategoryDisplayModel, CategoryDisplayModel) -> Bool = { (first, second) -> Bool in
+                let name1 = first.ItemName
+                let name2 = second.ItemName
+                let result = name1.compare(name2)
+                return result == .orderedAscending
+            }
+            
+            rejectedList.sort(by: comparator)
+            todoList.sort(by: comparator)
+            pendingList.sort(by: comparator)
+            approvedList.sort(by: comparator)
+
+            categoryList.sort { (first, second) -> Bool in
+                let name1 = first.CategoryName
+                let name2 = second.CategoryName
+                let result = name1.compare(name2)
+                return result == .orderedAscending
+            }
+            
+            self.categories = []
+            self.categories.append(contentsOf: rejectedList)
+            self.categories.append(contentsOf: todoList)
+            self.categories.append(contentsOf: pendingList)
+            self.categories.append(contentsOf: approvedList)
+            self.categories.append(contentsOf: categoryList)
+            
             completionHandler(self.categories)
             
         }catch let error {
