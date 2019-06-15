@@ -11,6 +11,8 @@ import IQKeyboardManagerSwift
 import UserNotifications
 import UserNotificationsUI
 import SQLite3
+import Firebase
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
@@ -22,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var navigationController: UINavigationController!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        Fabric.sharedSDK().debug = true
+        
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.appMainColor], for: UIControlState.normal)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "ProximaNovaSoft-Regular", size: 14.0) as Any, NSAttributedStringKey.foregroundColor: UIColor.white], for: .normal)

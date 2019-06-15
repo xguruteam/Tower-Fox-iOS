@@ -22,4 +22,11 @@ target 'Tower Fox' do
   pod 'AFNetworking'
   
   pod 'Toaster'
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Analytics'
+  pod 'Fabric', '~> 1.10.1'
+  pod 'Crashlytics', '~> 3.13.1'
+
 end

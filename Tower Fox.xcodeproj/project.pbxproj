@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		63FFF216EA3DBAC2707A6174 /* Pods_Tower_Fox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C822FA680F2FAD7A1F384A5 /* Pods_Tower_Fox.framework */; };
+		CA1E83C822B5172C0082CB98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1E83C722B5172B0082CB98 /* GoogleService-Info.plist */; };
 		CA2B7AFB22ACE5E200FF33FF /* PHPhotoLibrary+SaveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2B7AFA22ACE5E100FF33FF /* PHPhotoLibrary+SaveImage.swift */; };
 		CA4E2EC1213F2EF0003990B1 /* LDProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4E2EBE213F2EF0003990B1 /* LDProgressView.m */; };
 		CA4E2EC2213F2EF0003990B1 /* UIColor+RGBValues.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4E2EC0213F2EF0003990B1 /* UIColor+RGBValues.m */; };
@@ -95,6 +96,7 @@
 		2923CDCEF88110E1569C046E /* Pods-Tower Fox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tower Fox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tower Fox/Pods-Tower Fox.release.xcconfig"; sourceTree = "<group>"; };
 		965DED082D7FDE1AC2D8684F /* Pods-Tower Fox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tower Fox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tower Fox/Pods-Tower Fox.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0BE30E217D6DE100540AB2 /* Tower Fox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tower Fox.entitlements"; sourceTree = "<group>"; };
+		CA1E83C722B5172B0082CB98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA2B7AFA22ACE5E100FF33FF /* PHPhotoLibrary+SaveImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+SaveImage.swift"; sourceTree = "<group>"; };
 		CA4E2EBD213F2EF0003990B1 /* LDProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDProgressView.h; sourceTree = "<group>"; };
 		CA4E2EBE213F2EF0003990B1 /* LDProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDProgressView.m; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				CADF6244214976980092F441 /* IMG_0359.JPG */,
 				CA75F5282130118E003EDAAB /* TowerFox_Bridging_Header.h */,
 				CA6A344221372288003017C8 /* Towerfox.db */,
+				CA1E83C722B5172B0082CB98 /* GoogleService-Info.plist */,
 			);
 			path = TowerFox;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				CA75F489212FDF2E003EDAAB /* Frameworks */,
 				CA75F48A212FDF2E003EDAAB /* Resources */,
 				FD0AE76879CF700E4A168432 /* [CP] Embed Pods Frameworks */,
+				CA1E83C922B517B50082CB98 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -490,6 +494,7 @@
 				CA75F497212FDF35003EDAAB /* Assets.xcassets in Resources */,
 				CA75F495212FDF2E003EDAAB /* Main.storyboard in Resources */,
 				CA75F4E3212FE05B003EDAAB /* ProximaNovaSoft-Medium.otf in Resources */,
+				CA1E83C822B5172C0082CB98 /* GoogleService-Info.plist in Resources */,
 				CADF62452149769A0092F441 /* IMG_0359.JPG in Resources */,
 				CA75F4E5212FE05B003EDAAB /* ProximaNovaSoft-Semibold.otf in Resources */,
 			);
@@ -515,6 +520,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CA1E83C922B517B50082CB98 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		FD0AE76879CF700E4A168432 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -669,7 +692,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

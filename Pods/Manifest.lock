@@ -24,9 +24,64 @@ PODS:
     - AWSAuthCore (= 2.6.26)
   - AWSS3 (2.6.26):
     - AWSCore (= 2.6.26)
+  - Crashlytics (3.13.1):
+    - Fabric (~> 1.10.1)
   - CryptoSwift (0.11.0)
   - DropDown (2.3.2)
+  - Fabric (1.10.1)
+  - Firebase/Analytics (6.2.0):
+    - Firebase/Core
+  - Firebase/Core (6.2.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.0.1)
+  - Firebase/CoreOnly (6.2.0):
+    - FirebaseCore (= 6.0.2)
+  - FirebaseAnalytics (6.0.1):
+    - FirebaseCore (~> 6.0)
+    - FirebaseInstanceID (~> 4.1)
+    - GoogleAppMeasurement (= 6.0.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (6.0.2):
+    - GoogleUtilities/Environment (~> 6.0)
+    - GoogleUtilities/Logger (~> 6.0)
+  - FirebaseInstanceID (4.1.1):
+    - FirebaseCore (~> 6.0)
+    - GoogleUtilities/Environment (~> 6.0)
+    - GoogleUtilities/UserDefaults (~> 6.0)
+  - GoogleAppMeasurement (6.0.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (6.2.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.2.0)
+  - GoogleUtilities/Logger (6.2.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.2.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.2.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.2.0)"
+  - GoogleUtilities/Reachability (6.2.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.2.0):
+    - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.1.1)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - Reachability (3.2)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -45,8 +100,12 @@ DEPENDENCIES:
   - AWSCognito
   - AWSMobileClient
   - AWSS3
+  - Crashlytics (~> 3.13.1)
   - CryptoSwift
   - DropDown
+  - Fabric (~> 1.10.1)
+  - Firebase/Analytics
+  - Firebase/Core
   - IQKeyboardManagerSwift
   - Reachability
   - SDWebImage
@@ -65,9 +124,18 @@ SPEC REPOS:
     - AWSCore
     - AWSMobileClient
     - AWSS3
+    - Crashlytics
     - CryptoSwift
     - DropDown
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
+    - GoogleUtilities
     - IQKeyboardManagerSwift
+    - nanopb
     - Reachability
     - SDWebImage
     - SideMenu
@@ -84,9 +152,18 @@ SPEC CHECKSUMS:
   AWSCore: 0177bb7e5616d967277b398e7a05ed7a228e6158
   AWSMobileClient: 1800cc78a28d49ac4b03deef5aefae8395f952b3
   AWSS3: 4d857a223704bd956e91a659aec17ba1896ee0a9
+  Crashlytics: 5aa8e90dcbf2f34898b4f5a0037787531246cca0
   CryptoSwift: ad5208dd2aae0a764ea4ce2c2d34bd067cae67f0
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
+  Fabric: f6f21452846788bb44595d73e9909d79d328e617
+  Firebase: 5965bac23e7fcb5fa6d926ed429c9ecef8a2014e
+  FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
+  FirebaseCore: b0f0262acebfa540e5f97b3832dbb13186980822
+  FirebaseInstanceID: cdb3827746d53ece7ae87a5c51c25c3055443366
+  GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
+  GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
@@ -95,6 +172,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: a5566e7235e5bd2f7b77ddf027c50a23427fcab7
+PODFILE CHECKSUM: f62c579e50c6e984f7e1cbe7bc65ef260de8d6ef
 
 COCOAPODS: 1.7.0
