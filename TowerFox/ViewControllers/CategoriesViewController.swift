@@ -17,10 +17,22 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(NotificationReceived(_ :)), name: Notification.Name("PhotesUpdated"), object: nil)
-       tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         AddNavigationItems()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if isMovingFromParentViewController {
+            NotificationCenter.default.removeObserver(self, name: Notification.Name("PhotesUpdated"), object: nil)
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("PhotesUpdated"), object: nil)
     }
     
     func AddNavigationItems() {
@@ -135,15 +147,15 @@ class CategoriesViewController: UIViewController {
     }
     
     func checkCategories()  {
-        Database.sharedInstance.getPhotoRemainingCount { (data) in
+        Database.sharedInstance.getPhotoRemainingCount { [unowned self] (data) in
             self.tableView.setContentOffset(CGPoint.zero, animated: true)
             self.tableView.reloadData()
         }
-        Database.sharedInstance.getHeaderCount { (data) in
+        Database.sharedInstance.getHeaderCount { [unowned self] (data) in
             self.tableView.setContentOffset(CGPoint.zero, animated: true)
             self.tableView.reloadData()
         }
-        Database.sharedInstance.getCategoriesList(completionHandler: { (data) in
+        Database.sharedInstance.getCategoriesList(completionHandler: { [unowned self] (data) in
             appDel.hideHUD()
             self.tableView.setContentOffset(CGPoint.zero, animated: true)
             self.tableView.reloadData()

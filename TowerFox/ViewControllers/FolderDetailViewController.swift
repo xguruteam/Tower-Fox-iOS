@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import Toaster
 
-protocol TakenPhotoDelegate {
+protocol TakenPhotoDelegate: class {
     func didUpdateTakenPhoto()
 }
 
@@ -26,7 +26,7 @@ class FolderDetailViewController: UIViewController {
     @IBOutlet weak var btnSave: MKCardView!
     @IBOutlet weak var btnSaveAndReturn: MKCardView!
     @IBOutlet weak var btnDeleteAndContinue: MKCardView!
-    var delegate: TakenPhotoDelegate!
+    weak var delegate: TakenPhotoDelegate!
     var detailText = ""
     var capturedImage: UIImage!
     var isAdhoc = false

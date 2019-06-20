@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol MGSegmentedProgressBarDelegate {
+public protocol MGSegmentedProgressBarDelegate: class {
     
     func progressBar(_ progressBar: MGSegmentedProgressBar, titleInsetsForSection section: Int) -> UIEdgeInsets
     func progressBar(_ progressBar: MGSegmentedProgressBar, titleAlignmentForSection section: Int) -> MGLabelAlignment

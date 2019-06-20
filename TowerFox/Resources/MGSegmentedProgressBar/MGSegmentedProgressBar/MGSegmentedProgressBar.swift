@@ -14,11 +14,11 @@ public enum MGLineCap {
 
 open class MGSegmentedProgressBar: UIView {
     
-    public var dataSource: MGSegmentedProgressBarDataSource? {
+    weak public var dataSource: MGSegmentedProgressBarDataSource? {
         didSet { reloadData() }
     }
     
-    public var delegate: MGSegmentedProgressBarDelegate? {
+    weak public var delegate: MGSegmentedProgressBarDelegate? {
         didSet { reloadData() }
     }
     

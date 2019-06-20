@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol MGSegmentedProgressBarDataSource {
+public protocol MGSegmentedProgressBarDataSource: class {
     
     func numberOfSteps(in progressBar: MGSegmentedProgressBar) -> Int
     func numberOfSections(in progressBar: MGSegmentedProgressBar) -> Int

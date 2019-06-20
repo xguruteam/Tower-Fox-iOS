@@ -7,12 +7,12 @@
 //
 
 import UIKit
-protocol SyncProgressViewControllerDelegate {
+protocol SyncProgressViewControllerDelegate: class {
     func close()
 }
 class SyncProgressViewController: UIViewController {
 
-    var delegate: SyncProgressViewControllerDelegate!
+    weak var delegate: SyncProgressViewControllerDelegate!
     @IBOutlet weak var lbltitle: UILabel!
     @IBOutlet weak var viewprogress: UIView!
     @IBOutlet weak var contentView: MKCardView!
