@@ -1573,7 +1573,7 @@ extension UIDevice {
 
 extension UIDevice {
     var iPhoneX: Bool {
-        return UIScreen.main.nativeBounds.height == 2436
+        return UIDevice.current.userInterfaceIdiom == .phone && (UIScreen.main.bounds.size.height == 812.0 || UIScreen.main.bounds.size.height == 896.0)
     }
     var iPhone: Bool {
         return UIDevice.current.userInterfaceIdiom == .phone

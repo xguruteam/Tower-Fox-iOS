@@ -16,6 +16,11 @@ class TakeNewPhotoViewController: UIViewController {
     @IBOutlet weak var btnTakePhoto: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UIDevice().iPhoneX {
+            btnTakePhoto.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 40, right: 10)
+        }
+        
         self.addNavigationItem()
         var title = ""
         for cat in Database.sharedInstance.categoriesStack {

@@ -25,6 +25,10 @@ class TakePhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if UIDevice().iPhoneX {
+            btnTakePhoto.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 40, right: 10)
+        }
+        
         addNavigationButton()
         // Do any additional setup after loading the view.
     }

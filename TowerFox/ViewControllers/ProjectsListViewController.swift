@@ -40,6 +40,12 @@ class ProjectsListViewController: UIViewController {
         self.progressView.borderRadius = 1
         self.progressView.animateDirection = LDAnimateDirection.backward
         self.syncContentView.addSubview(self.progressView)
+        self.progressView.translatesAutoresizingMaskIntoConstraints = false
+        self.progressView.leftAnchor.constraint(equalTo: syncContentView.leftAnchor).isActive = true
+        self.progressView.topAnchor.constraint(equalTo: syncContentView.topAnchor).isActive = true
+        self.progressView.bottomAnchor.constraint(equalTo: syncContentView.bottomAnchor).isActive = true
+        self.progressView.rightAnchor.constraint(equalTo: syncContentView.rightAnchor).isActive = true
+        
         self.hideSyncView()
     }
     
