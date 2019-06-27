@@ -358,6 +358,9 @@ class FolderDetailViewController: UIViewController {
             if isAdhoc {
                 storage_saveObject("ItemID", "0")
             }
+            if storage_loadObject("ItemID") == nil {
+                storage_saveObject("ItemID", "0")
+            }
             saveAndContinueFlag = true
             imageNameStr = "\(storage_loadObject("ProjectID")!)_\(storage_loadObject("ParentID")!)_\(storage_loadObject("ItemID")!)_\(storage_loadObject("SectorID")!)_\(storage_loadObject("PositionID")!)_\(dateConversion()).jpg"
             self.saveCapturedImage(self.capturedImage)
@@ -396,6 +399,9 @@ class FolderDetailViewController: UIViewController {
         else
         {
             if isAdhoc {
+                storage_saveObject("ItemID", "0")
+            }
+            if storage_loadObject("ItemID") == nil {
                 storage_saveObject("ItemID", "0")
             }
             saveAndContinueFlag = false
