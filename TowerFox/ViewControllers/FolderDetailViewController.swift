@@ -238,6 +238,10 @@ class FolderDetailViewController: UIViewController {
                    if success {
                         if self.saveAndContinueFlag {
                             Database.sharedInstance.getNextItemToDisplay(completionHandler: { (data) in
+                                if data.count == 0 {
+                                    Sync.sharedInstance.uploadDataToServer()
+                                }
+                                
                                 self.dismiss(animated: true, completion: {
                                     if self.delegate != nil {
                                         self.delegate.didUpdateTakenPhoto()
@@ -268,6 +272,10 @@ class FolderDetailViewController: UIViewController {
                     if success {
                         if self.saveAndContinueFlag {
                             Database.sharedInstance.getNextItemToDisplay(completionHandler: { (data) in
+                                if data.count == 0 {
+                                    Sync.sharedInstance.uploadDataToServer()
+                                }
+                                
                                 self.dismiss(animated: true, completion: {
                                     if self.delegate != nil {
                                         self.delegate.didUpdateTakenPhoto()
@@ -332,11 +340,15 @@ class FolderDetailViewController: UIViewController {
     
     @IBAction func DeleteAndReturnButtonClicked(_ sender: MKCardView) {
         appDel.showHUD("Synchronizing", subtext: "Please wait")
-       if deletePhotoFlag {
-        appDel.hideHUD()
+        if deletePhotoFlag {
+            appDel.hideHUD()
             deletePhotoFlag = false
-            self.backTwo()
             Database.sharedInstance.uploadData()
+            self.dismiss(animated: true, completion: {
+                if self.delegate != nil {
+                    self.delegate.didUpdateTakenPhoto()
+                }
+            })
         }
     }
     
@@ -391,12 +403,13 @@ class FolderDetailViewController: UIViewController {
         appDel.showHUD("Synchronizing", subtext: "Please wait")
         if deletePhotoFlag {
             deletePhotoFlag = false
-            self.backTwo()
             Database.sharedInstance.uploadData()
             appDel.hideHUD()
-            if delegate != nil {
-                delegate.didUpdateTakenPhoto()
-            }
+            self.dismiss(animated: true, completion: {
+                if self.delegate != nil {
+                    self.delegate.didUpdateTakenPhoto()
+                }
+            })
         }
         else
         {

@@ -495,50 +495,79 @@ public class Database {
         var query = "";
         if(Int(storage_loadObject("SectorID")!)! > 0)
         {
-            query = "select DISTINCT(ItemID) AS ItemID, AdhocPhotoID from photos where ProjectID = \"\(storage_loadObject("ProjectID")!)\" and CategoryID = \"\(storage_loadObject("ParentID")!)\" and (SectorID = \"99999\") and (PositionID = \"99999\") and Status in (\"\(StatusEnum.TAKEPIC.rawValue)\", \"\(StatusEnum.RESETPHOTO.rawValue)\" ,\"\(StatusEnum.REJECTED.rawValue)\")  and ItemID Not in (Select Distinct ItemID from Photos where ProjectID = \"\(storage_loadObject("ProjectID")!)\" and CategoryID = \"\(storage_loadObject("ParentID")!)\" and  SectorID = \"\(storage_loadObject("SectorID")!)\" and PositionID = \"\(storage_loadObject("PositionID")!)\") order by SortOrder"
+            query = "select DISTINCT(ItemID) AS ItemID, AdhocPhotoID, Status, ItemName from photos where ProjectID = \"\(storage_loadObject("ProjectID")!)\" and CategoryID = \"\(storage_loadObject("ParentID")!)\" and (SectorID = \"99999\") and (PositionID = \"99999\") and Status in (\"\(StatusEnum.TAKEPIC.rawValue)\", \"\(StatusEnum.RESETPHOTO.rawValue)\" ,\"\(StatusEnum.REJECTED.rawValue)\")  and ItemID Not in (Select Distinct ItemID from Photos where ProjectID = \"\(storage_loadObject("ProjectID")!)\" and CategoryID = \"\(storage_loadObject("ParentID")!)\" and  SectorID = \"\(storage_loadObject("SectorID")!)\" and PositionID = \"\(storage_loadObject("PositionID")!)\") order by SortOrder"
             print("Projects: " + query)
-            do {
-                let stmt = try db.prepare(query)
-                var param: [String: Any] = [:]
-                for row in stmt {
-                    for (index, name) in stmt.columnNames.enumerated() {
-                        print ("\(name):\(row[index] != nil ? row[index]! : "null")")
-                        // id: Optional(1), email: Optional("alice@mac.com")
-                        param[name] = row[index] != nil ? row[index]! : 0
-                    }
-                }
-                storage_saveObject("ItemID", param["ItemID"] as! String)
-                storage_saveObject("AdhocPhotoID", param["AdhocPhotoID"] as! String)
-                completionHandler(param)
-                
-            }catch let error {
-                print(error.localizedDescription)
-                completionHandler([:])
-            }
         }
         else
         {
-            query = "select ItemID, AdhocPhotoID from photos where ProjectID = \"\(storage_loadObject("ProjectID")!)\" and CategoryID = \"\(storage_loadObject("ParentID")!)\" and (SectorID = \"\(storage_loadObject("SectorID")!)\") and (PositionID = \"\(storage_loadObject("PositionID")!)\") and Status in (\"\(StatusEnum.TAKEPIC.rawValue)\", \"\(StatusEnum.RESETPHOTO.rawValue)\" ,\"\(StatusEnum.REJECTED.rawValue)\") order by SortOrder"
-            do {
-                let stmt = try db.prepare(query)
-                var param: [String: Any] = [:]
-                for row in stmt {
-                    for (index, name) in stmt.columnNames.enumerated() {
-                        print ("\(name):\(row[index] != nil ? row[index]! : "null")")
-                        // id: Optional(1), email: Optional("alice@mac.com")
-                        param[name] = row[index] != nil ? row[index]! : 0
-                    }
+            query = "select ItemID, AdhocPhotoID, Status, ItemName from photos where ProjectID = \"\(storage_loadObject("ProjectID")!)\" and CategoryID = \"\(storage_loadObject("ParentID")!)\" and (SectorID = \"\(storage_loadObject("SectorID")!)\") and (PositionID = \"\(storage_loadObject("PositionID")!)\") and Status in (\"\(StatusEnum.TAKEPIC.rawValue)\", \"\(StatusEnum.RESETPHOTO.rawValue)\" ,\"\(StatusEnum.REJECTED.rawValue)\") order by SortOrder"
+        }
+        
+        do {
+            let stmt = try db.prepare(query)
+            var paramArray: [[String: Any]] = []
+            var param: [String: Any] = [:]
+            for row in stmt {
+                for (index, name) in stmt.columnNames.enumerated() {
+                    print ("\(name):\(row[index] != nil ? row[index]! : "null")")
+                    // id: Optional(1), email: Optional("alice@mac.com")
+                    param[name] = row[index] != nil ? row[index]! : 0
                 }
+                paramArray.append(param)
+            }
+            
+            paramArray.sort { (param1, param2) -> Bool in
+                let status1 = Int(param1["Status"] as! Int64)
+                let status2 = Int(param2["Status"] as! Int64)
+                if status1 < status2 { return true }
+                else if status1 > status2 { return false }
+                
+                let name1 = param1["ItemName"] as! String
+                let name2 = param2["ItemName"] as! String
+                let result = name1.compare(name2)
+                return result == .orderedAscending
+            }
+            
+            
+            if paramArray.count > 0 {
+                if let itemId = storage_loadObject("ItemID") {
+                    let searched = paramArray.firstIndex { (param) -> Bool in
+                        if let pitemId = param["ItemID"] as? String, pitemId == itemId {
+                            return true
+                        }
+                        return false
+                    }
+                    
+                    if let _ = searched {
+                        if paramArray.count == 1 {
+                            param = [:]
+                        } else {
+                            let index = Int(searched!)
+                            if index == paramArray.count - 1 {
+                                param = paramArray[0]
+                            } else {
+                                param = paramArray[index + 1]
+                            }
+                        }
+                    } else {
+                        param = paramArray[0]
+                    }
+                } else {
+                    param = paramArray[0]
+                }
+            } else {
+                param = [:]
+            }
+            if param.count > 0 {
                 storage_saveObject("ItemID", param["ItemID"] as! String)
                 storage_saveObject("AdhocPhotoID", param["AdhocPhotoID"] as! String)
-                completionHandler(param)
-                
-            }catch let error {
-                print(error.localizedDescription)
-                completionHandler([:])
             }
+            completionHandler(param)
+            
+        }catch let error {
+            print(error.localizedDescription)
+            completionHandler([:])
         }
-
     }
     
     func getItemsCountInSelectedCategory(completionHandler: @escaping([String: Any]) -> Void) {
