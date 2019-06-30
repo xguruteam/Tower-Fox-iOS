@@ -372,9 +372,11 @@ class FolderDetailViewController: UIViewController {
         let alertController = UIAlertController(title: "Attention", message: "Are you sure you want to delete the photo?", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (_) in
             self.deletePhotoFlag = true
-            appDel.showHUD("Synchronizing", subtext: "Please wait")
             if Int(storage_loadObject("PhotoStatus")!)! != StatusEnum.TAKEPIC.rawValue {
+                appDel.showHUD("Synchronizing", subtext: "Please wait")
                 self.resetPhoto()
+            } else {
+                self.imgCapturedPhoto.image = nil
             }
         }
         let noAction = UIAlertAction(title: "No", style: .default) { (_) in
