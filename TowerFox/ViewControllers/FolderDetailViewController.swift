@@ -444,6 +444,7 @@ class FolderDetailViewController: UIViewController {
         Database.sharedInstance.resetPhoto { (success) in
             appDel.hideHUD()
             if success {
+                Database.sharedInstance.uploadData()
                 self.dismiss(animated: true, completion: {
                     if self.delegate != nil {
                         self.delegate.didUpdateTakenPhoto()

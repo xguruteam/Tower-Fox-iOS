@@ -8,6 +8,22 @@
 
 import UIKit
 
+class CustomPhotoModel: NSObject, INSPhotoViewable {
+    var image: UIImage?
+    
+    var thumbnailImage: UIImage?
+    
+    func loadImageWithCompletionHandler(_ completion: @escaping (UIImage?, Error?) -> ()) {
+        completion(image, nil)
+    }
+    
+    func loadThumbnailImageWithCompletionHandler(_ completion: @escaping (UIImage?, Error?) -> ()) {
+        completion(thumbnailImage, nil)
+    }
+    
+    var attributedTitle: NSAttributedString?
+}
+
 class TakePhotoViewController: UIViewController {
 
     @IBOutlet weak var btnRejectionDetails: MKCardView!
@@ -31,6 +47,8 @@ class TakePhotoViewController: UIViewController {
         
         addNavigationButton()
         // Do any additional setup after loading the view.
+        imvPhoto.isUserInteractionEnabled = true
+        imvPhoto.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleZoomTap)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +56,33 @@ class TakePhotoViewController: UIViewController {
         Database.sharedInstance.getItemsCountInSelectedCategory(completionHandler: { _ in
             self.checkPhotosDetail()
         } )
+    }
+    
+    @objc func handleZoomTap(_ tapGesture: UITapGestureRecognizer) {
+        
+        if let _ = imvPhoto.image {
+            let textColor = UIColor.white
+            let textFont = UIFont(name: "ProximaNovaSoft-Semibold", size: 16)!
+            
+            let textFontAttributes = [
+                NSAttributedStringKey.font: textFont,
+                NSAttributedStringKey.foregroundColor: textColor,
+                ] as [NSAttributedStringKey : Any]
+            let caption = NSAttributedString(string: lblItemName.text ?? "", attributes: textFontAttributes)
+            let photo = CustomPhotoModel()
+            photo.image = imvPhoto.image
+            photo.attributedTitle = caption
+            
+            let photos: [INSPhotoViewable] = [
+                photo
+            ]
+            
+            let galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: nil, referenceView: imvPhoto)
+            galleryPreview.referenceViewForPhotoWhenDismissingHandler = { [unowned self] _ in
+                return self.imvPhoto
+            }
+            present(galleryPreview, animated: true, completion: nil)
+        }
     }
     
     func addNavigationButton() {

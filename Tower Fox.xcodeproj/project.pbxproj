@@ -80,6 +80,16 @@
 		CA75F532213041DF003EDAAB /* RejectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA75F531213041DF003EDAAB /* RejectionDetailViewController.swift */; };
 		CA75F5342130421E003EDAAB /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA75F5332130421E003EDAAB /* TakePhotoViewController.swift */; };
 		CA75F536213042C1003EDAAB /* FolderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA75F535213042C1003EDAAB /* FolderDetailViewController.swift */; };
+		CA9AD11122CD79A8003D580B /* INSPhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10522CD79A8003D580B /* INSPhotosDataSource.swift */; };
+		CA9AD11222CD79A8003D580B /* INSPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10622CD79A8003D580B /* INSPhotosViewController.swift */; };
+		CA9AD11322CD79A8003D580B /* INSPhotosTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10722CD79A8003D580B /* INSPhotosTransitionAnimator.swift */; };
+		CA9AD11422CD79A8003D580B /* INSPhotosInteractionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10822CD79A8003D580B /* INSPhotosInteractionAnimator.swift */; };
+		CA9AD11522CD79A8003D580B /* INSPhotoGallery.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA9AD10922CD79A8003D580B /* INSPhotoGallery.bundle */; };
+		CA9AD11622CD79A8003D580B /* INSScalingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10A22CD79A8003D580B /* INSScalingImageView.swift */; };
+		CA9AD11722CD79A8003D580B /* INSPhotosOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10B22CD79A8003D580B /* INSPhotosOverlayView.swift */; };
+		CA9AD11822CD79A8003D580B /* INSPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10C22CD79A8003D580B /* INSPhotoViewController.swift */; };
+		CA9AD11922CD79A8003D580B /* INSPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10E22CD79A8003D580B /* INSPhoto.swift */; };
+		CA9AD11A22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10F22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift */; };
 		CAD505DE213F8947004EBF33 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD505DD213F8947004EBF33 /* MainTabViewController.swift */; };
 		CAD505E021400DED004EBF33 /* RejectedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD505DF21400DED004EBF33 /* RejectedListViewController.swift */; };
 		CAD505E221400DFC004EBF33 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD505E121400DFC004EBF33 /* CategoriesViewController.swift */; };
@@ -175,6 +185,16 @@
 		CA75F531213041DF003EDAAB /* RejectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectionDetailViewController.swift; sourceTree = "<group>"; };
 		CA75F5332130421E003EDAAB /* TakePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 		CA75F535213042C1003EDAAB /* FolderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailViewController.swift; sourceTree = "<group>"; };
+		CA9AD10522CD79A8003D580B /* INSPhotosDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhotosDataSource.swift; sourceTree = "<group>"; };
+		CA9AD10622CD79A8003D580B /* INSPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhotosViewController.swift; sourceTree = "<group>"; };
+		CA9AD10722CD79A8003D580B /* INSPhotosTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhotosTransitionAnimator.swift; sourceTree = "<group>"; };
+		CA9AD10822CD79A8003D580B /* INSPhotosInteractionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhotosInteractionAnimator.swift; sourceTree = "<group>"; };
+		CA9AD10922CD79A8003D580B /* INSPhotoGallery.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = INSPhotoGallery.bundle; sourceTree = "<group>"; };
+		CA9AD10A22CD79A8003D580B /* INSScalingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSScalingImageView.swift; sourceTree = "<group>"; };
+		CA9AD10B22CD79A8003D580B /* INSPhotosOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhotosOverlayView.swift; sourceTree = "<group>"; };
+		CA9AD10C22CD79A8003D580B /* INSPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhotoViewController.swift; sourceTree = "<group>"; };
+		CA9AD10E22CD79A8003D580B /* INSPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhoto.swift; sourceTree = "<group>"; };
+		CA9AD10F22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+INSPhotoViewer.swift"; sourceTree = "<group>"; };
 		CAD505DD213F8947004EBF33 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		CAD505DF21400DED004EBF33 /* RejectedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedListViewController.swift; sourceTree = "<group>"; };
 		CAD505E121400DFC004EBF33 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +378,7 @@
 		CA75F4D2212FE05B003EDAAB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CA9AD10422CD79A8003D580B /* INSPhotoGallery */,
 				CA2B7AFA22ACE5E100FF33FF /* PHPhotoLibrary+SaveImage.swift */,
 				CA75F4D3212FE05B003EDAAB /* ApiManager.swift */,
 				CA75F4D4212FE05B003EDAAB /* ApiRequest.swift */,
@@ -406,6 +427,23 @@
 			);
 			name = MGSegmentedProgressBar;
 			path = MGSegmentedProgressBar/MGSegmentedProgressBar;
+			sourceTree = "<group>";
+		};
+		CA9AD10422CD79A8003D580B /* INSPhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				CA9AD10522CD79A8003D580B /* INSPhotosDataSource.swift */,
+				CA9AD10622CD79A8003D580B /* INSPhotosViewController.swift */,
+				CA9AD10722CD79A8003D580B /* INSPhotosTransitionAnimator.swift */,
+				CA9AD10822CD79A8003D580B /* INSPhotosInteractionAnimator.swift */,
+				CA9AD10922CD79A8003D580B /* INSPhotoGallery.bundle */,
+				CA9AD10A22CD79A8003D580B /* INSScalingImageView.swift */,
+				CA9AD10B22CD79A8003D580B /* INSPhotosOverlayView.swift */,
+				CA9AD10C22CD79A8003D580B /* INSPhotoViewController.swift */,
+				CA9AD10E22CD79A8003D580B /* INSPhoto.swift */,
+				CA9AD10F22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift */,
+			);
+			path = INSPhotoGallery;
 			sourceTree = "<group>";
 		};
 		CAD505E92141AB36004EBF33 /* MBProgressHUD */ = {
@@ -492,6 +530,7 @@
 				CA75F4E4212FE05B003EDAAB /* ProximaNovaSoft-Regular.otf in Resources */,
 				CA75F4E2212FE05B003EDAAB /* ProximaNovaSoft-Bold.otf in Resources */,
 				CA75F497212FDF35003EDAAB /* Assets.xcassets in Resources */,
+				CA9AD11522CD79A8003D580B /* INSPhotoGallery.bundle in Resources */,
 				CA75F495212FDF2E003EDAAB /* Main.storyboard in Resources */,
 				CA75F4E3212FE05B003EDAAB /* ProximaNovaSoft-Medium.otf in Resources */,
 				CA1E83C822B5172C0082CB98 /* GoogleService-Info.plist in Resources */,
@@ -569,6 +608,8 @@
 				CA75F4F0212FE05B003EDAAB /* NSMutableAttributedString+RemoveAttributes.swift in Sources */,
 				CA75F510212FE05B003EDAAB /* UIExtensions.swift in Sources */,
 				CA75F4F2212FE05B003EDAAB /* UIGestureRecognizer+UILabel.swift in Sources */,
+				CA9AD11222CD79A8003D580B /* INSPhotosViewController.swift in Sources */,
+				CA9AD11922CD79A8003D580B /* INSPhoto.swift in Sources */,
 				CA75F530213041C0003EDAAB /* AddProjectViewController.swift in Sources */,
 				CA75F52C2130417D003EDAAB /* SettingsViewController.swift in Sources */,
 				CA75F50E212FE05B003EDAAB /* LocationManager.swift in Sources */,
@@ -576,6 +617,7 @@
 				CA75F532213041DF003EDAAB /* RejectionDetailViewController.swift in Sources */,
 				CA75F4F1212FE05B003EDAAB /* TouchGestureRecognizer.swift in Sources */,
 				CA75F492212FDF2E003EDAAB /* ServiceViewController.swift in Sources */,
+				CA9AD11A22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift in Sources */,
 				CAD505E82141AA34004EBF33 /* TakeNewPhotoViewController.swift in Sources */,
 				CA75F511212FE05B003EDAAB /* WormTabStrip.swift in Sources */,
 				CA75F50A212FE05B003EDAAB /* AppManager.swift in Sources */,
@@ -589,6 +631,7 @@
 				CA75F503212FE05B003EDAAB /* MKTableViewCell.swift in Sources */,
 				CA75F50D212FE05B003EDAAB /* GlobalStuff.swift in Sources */,
 				CAD505EC2141AB36004EBF33 /* MBProgressHUD.m in Sources */,
+				CA9AD11122CD79A8003D580B /* INSPhotosDataSource.swift in Sources */,
 				CA75F52221300BD7003EDAAB /* MGSegmentedProgressBarDataSource.swift in Sources */,
 				CA75F52021300BD7003EDAAB /* MGLabelAlignment.swift in Sources */,
 				CA75F4FB212FE05B003EDAAB /* MKImageView.swift in Sources */,
@@ -596,6 +639,7 @@
 				CAD505DE213F8947004EBF33 /* MainTabViewController.swift in Sources */,
 				CA75F500212FE05B003EDAAB /* MKSideDrawerViewController.swift in Sources */,
 				CA75F507212FE05B003EDAAB /* VKCheckBox.swift in Sources */,
+				CA9AD11322CD79A8003D580B /* INSPhotosTransitionAnimator.swift in Sources */,
 				CA75F52321300BD7003EDAAB /* MGSegmentedProgressBarDelegate.swift in Sources */,
 				CA75F52A21303F53003EDAAB /* LoginViewController.swift in Sources */,
 				CA75F52121300BD7003EDAAB /* MGSegmentedProgressBar.swift in Sources */,
@@ -612,15 +656,18 @@
 				CADB1FDB215D896D00664AF6 /* Database.swift in Sources */,
 				CA75F50C212FE05B003EDAAB /* FMBlurable.swift in Sources */,
 				CA6A343E2136E3E3003017C8 /* Sync.swift in Sources */,
+				CA9AD11622CD79A8003D580B /* INSScalingImageView.swift in Sources */,
 				CA75F4FD212FE05B003EDAAB /* MKLayer.swift in Sources */,
 				CA6A343C213432B3003017C8 /* ResponseModel.swift in Sources */,
 				CA75F515212FE183003EDAAB /* AppData.swift in Sources */,
 				CA75F5342130421E003EDAAB /* TakePhotoViewController.swift in Sources */,
+				CA9AD11722CD79A8003D580B /* INSPhotosOverlayView.swift in Sources */,
 				CA75F4F8212FE05B003EDAAB /* MKColor.swift in Sources */,
 				CA6A343A213149BF003017C8 /* CollapsibleTableViewHeader.swift in Sources */,
 				CA75F4DF212FE05B003EDAAB /* ACFloatingTextField.swift in Sources */,
 				CA75F4F3212FE05B003EDAAB /* LTHRadioButton.swift in Sources */,
 				CA75F4FE212FE05B003EDAAB /* MKNavigationBar.swift in Sources */,
+				CA9AD11422CD79A8003D580B /* INSPhotosInteractionAnimator.swift in Sources */,
 				CA75F502212FE05B003EDAAB /* MKSwitch.swift in Sources */,
 				CA75F51F21300BD7003EDAAB /* MGBarView.swift in Sources */,
 				CA75F4F4212FE05B003EDAAB /* MKActivityIndicator.swift in Sources */,
@@ -631,6 +678,7 @@
 				CA4E2EC2213F2EF0003990B1 /* UIColor+RGBValues.m in Sources */,
 				CA75F4FA212FE05B003EDAAB /* MKEmbedMainControllerSegue.swift in Sources */,
 				CA75F4E0212FE05B003EDAAB /* APJTextPickerView.swift in Sources */,
+				CA9AD11822CD79A8003D580B /* INSPhotoViewController.swift in Sources */,
 				CA6A344121370D0A003017C8 /* ProjectModel.swift in Sources */,
 				CAD505E221400DFC004EBF33 /* CategoriesViewController.swift in Sources */,
 			);
