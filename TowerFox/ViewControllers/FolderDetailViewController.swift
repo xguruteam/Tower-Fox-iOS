@@ -129,6 +129,35 @@ class FolderDetailViewController: UIViewController {
         dateformatter.dateFormat = "M/dd/yyyy, hh:mm:ss a"
         storage_saveObject("TakenDate", dateformatter.string(from: date))
         // Do any additional setup after loading the view.
+        imgCapturedPhoto.isUserInteractionEnabled = true
+        imgCapturedPhoto.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleZoomTap)))
+    }
+    
+    @objc func handleZoomTap(_ tapGesture: UITapGestureRecognizer) {
+        
+        if let _ = imgCapturedPhoto.image {
+            let textColor = UIColor.white
+            let textFont = UIFont(name: "ProximaNovaSoft-Semibold", size: 16)!
+            
+            let textFontAttributes = [
+                NSAttributedStringKey.font: textFont,
+                NSAttributedStringKey.foregroundColor: textColor,
+                ] as [NSAttributedStringKey : Any]
+            let caption = NSAttributedString(string: storage_loadObject("ItemName") ?? "", attributes: textFontAttributes)
+            let photo = CustomPhotoModel()
+            photo.image = imgCapturedPhoto.image
+            photo.attributedTitle = caption
+            
+            let photos: [INSPhotoViewable] = [
+                photo
+            ]
+            
+            let galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: nil, referenceView: imgCapturedPhoto)
+            galleryPreview.referenceViewForPhotoWhenDismissingHandler = { [unowned self] _ in
+                return self.imgCapturedPhoto
+            }
+            present(galleryPreview, animated: true, completion: nil)
+        }
     }
     
     func addNavigationItem()  {
