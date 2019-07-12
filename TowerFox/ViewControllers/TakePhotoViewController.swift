@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CropViewController
 
 class CustomPhotoModel: NSObject, INSPhotoViewable {
     var image: UIImage?
@@ -207,16 +208,33 @@ class TakePhotoViewController: UIViewController {
             showErrorMessage("Synchronizing, Please wait...", title: "Please wait")
             return
         }
-        if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            showErrorMessage("Camera not Available", title: "Carmera Error")
-            return
-        }
-        let imageController = UIImagePickerController()
-        imageController.allowsEditing = false
-        imageController.sourceType = UIImagePickerControllerSourceType.camera
-        imageController.cameraFlashMode = .auto
-        imageController.delegate = self
-        present(imageController, animated: true, completion: nil)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                self.showErrorMessage("Camera not Available", title: "Carmera Error")
+                return
+            }
+            let imageController = UIImagePickerController()
+            imageController.allowsEditing = false
+            imageController.sourceType = UIImagePickerControllerSourceType.camera
+            imageController.cameraFlashMode = .auto
+            imageController.delegate = self
+            self.present(imageController, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photos", style: .default, handler: { (_) in
+            if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                self.showErrorMessage("Photos not Available", title: "Library Error")
+                return
+            }
+            let imageController = UIImagePickerController()
+            imageController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imageController.delegate = self
+            self.present(imageController, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
     }
     @IBAction func RejectionDetailClicked(_ sender: MKCardView) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "rejectionDetailVC") as! RejectionDetailViewController
@@ -249,13 +267,12 @@ class TakePhotoViewController: UIViewController {
 
 extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! FolderDetailViewController
-        vc.capturedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        vc.isAdhoc = false
-        vc.delegate = self
-        vc.galleryPath = self.galleryPath
-        self.present(vc, animated: true, completion: nil)
+        picker.dismiss(animated: true) { [unowned self] in
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            let cropViewController = CropViewController(image: image)
+            cropViewController.delegate = self
+            self.present(cropViewController, animated: true, completion: nil)
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -265,5 +282,19 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigation
 
 extension TakePhotoViewController: TakenPhotoDelegate {
     func didUpdateTakenPhoto() {
+    }
+}
+
+extension TakePhotoViewController: CropViewControllerDelegate {
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true) {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! FolderDetailViewController
+            vc.capturedImage = image
+            vc.isAdhoc = false
+            vc.delegate = self
+            vc.galleryPath = self.galleryPath
+            self.present(vc, animated: true, completion: nil)
+        }
+        cropViewController.delegate = nil //to avoid memory leaks
     }
 }
