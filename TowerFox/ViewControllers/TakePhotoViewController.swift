@@ -155,11 +155,27 @@ class TakePhotoViewController: UIViewController {
             }
         }else{
             self.lblDescription.text = "Example Photo"
-            let imageurl = String(format: "ReferencePhotos/%@", photoDetail["ReferenceImageName"] as! String)
-            self.imvPhoto.sd_setImage(with: IMAGE_LOCATION_PATH.appendingPathComponent(imageurl), placeholderImage: nil, options: [], completed: nil)
+            if let refImageName = photoDetail["ReferenceImageName"] as? String {
+                let imageurl = String(format: "ReferencePhotos/%@", refImageName)
+                self.imvPhoto.sd_setImage(with: IMAGE_LOCATION_PATH.appendingPathComponent(imageurl), placeholderImage: nil, options: [], completed: nil)
+            } else {
+                self.imvPhoto.sd_setImage(with: nil, placeholderImage: nil, options: [], completed: nil)
+            }
+            
         }
         if Int(photoDetail["Status"] as! Int64) == StatusEnum.APPROVED.rawValue {
             self.btnTakePhoto.isHidden = true
+        } else if Int(photoDetail["Status"] as! Int64) == StatusEnum.PICTAKEN.rawValue || Int(photoDetail["Status"] as! Int64) == StatusEnum.UPLOADED.rawValue {
+            self.btnTakePhoto.isHidden = false
+            let deleteView = MKCardView(frame: CGRect(x: 0, y: 0, width: 50, height: 36))
+            let deleteTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 36))
+            deleteTitle.text = "Delete"
+            deleteTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
+            deleteTitle.textColor = UIColor.white
+            deleteView.addSubview(deleteTitle)
+            deleteView.addTarget(self, action: #selector(DeleteButtonClicked(_:)), for: .touchUpInside)
+            let deleteItem = UIBarButtonItem(customView: deleteView)
+            self.navigationItem.rightBarButtonItems = [deleteItem]
         }else{
             self.btnTakePhoto.isHidden = false
             self.navigationItem.rightBarButtonItems = []
@@ -168,6 +184,7 @@ class TakePhotoViewController: UIViewController {
         storage_saveObject("Comments",photoDetail["Comments"] as Any)
         storage_saveObject("ReviewerName",photoDetail["TakenBy"] as! String)
         storage_saveObject("ReviewDate",photoDetail["TakenDate"] as! String)
+        storage_saveObject("TakenDate",photoDetail["TakenDate"] as! String)
         storage_saveObject("PhotoStatus", Int(photoDetail["Status"] as! Int64))
         Database.sharedInstance.getLocationMatrix(adhocPhotoID: self.photoDetail!["AdhocPhotoID"] as! String, categoryRelationID: self.photoDetail!["ParentCategoryID"] as! String) { (d) in
             self.lblCategoryName.text = d
@@ -201,6 +218,25 @@ class TakePhotoViewController: UIViewController {
         storage_saveObject("RequireSectorPosition", false);
         let vc = self.navigationController?.viewControllers[1]
         self.navigationController?.popToViewController(vc!, animated: true)
+    }
+    
+    @objc func DeleteButtonClicked(_ sender: MKCardView) {
+        let alertController = UIAlertController(title: "Attention", message: "Are you sure you want to delete the photo?", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            appDel.showHUD("Synchronizing", subtext: "Please wait")
+            Database.sharedInstance.resetPhoto { (success) in
+                appDel.hideHUD()
+                if success {
+                    Database.sharedInstance.uploadData()
+                    self.checkPhotosDetail()
+                }
+            }
+        }
+        let noAction = UIAlertAction(title: "No", style: .default) { (_) in
+        }
+        alertController.addAction(noAction)
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func TakePhotoButtonClicked(_ sender: MKButton) {
