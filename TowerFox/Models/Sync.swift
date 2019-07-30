@@ -357,15 +357,22 @@ public class Sync {
                             }
                             else
                             {
-                                let takenDate = photoModel.TakenDate
-                                let startIndex = takenDate?.index((takenDate?.startIndex)!, offsetBy: 6)
-                                let endIndex = takenDate?.index( startIndex!, offsetBy: 10)
-                                let convertedate = takenDate![startIndex!..<endIndex!]
-                                let timeinterval = TimeInterval(convertedate)
-                                let date = Date(timeIntervalSince1970: timeinterval!)
-                                let dateformatter = DateFormatter()
-                                dateformatter.dateFormat = "M/dd/yyyy,  h:mm:ss a"
-                                convertedDate = dateformatter.string(from: date)
+                                if let takenDate = photoModel.TakenDate
+                                {
+                                    let startIndex = takenDate.index(takenDate.startIndex, offsetBy: 6)
+                                    let endIndex = takenDate.index( startIndex, offsetBy: 10)
+                                    let convertedate = takenDate[startIndex..<endIndex]
+                                    if let timeinterval = TimeInterval(String(convertedate)) {
+                                        let date = Date(timeIntervalSince1970: timeinterval)
+                                        let dateformatter = DateFormatter()
+                                        dateformatter.dateFormat = "M/dd/yyyy,  h:mm:ss a"
+                                        convertedDate = dateformatter.string(from: date)
+                                    } else {
+                                        convertedDate = ""
+                                    }
+                                } else {
+                                    convertedDate = ""
+                                }
                             }
                             var referenceImageName = ""
                             let referenceImageurl = photoModel.ReferenceImageName.components(separatedBy: "/")
