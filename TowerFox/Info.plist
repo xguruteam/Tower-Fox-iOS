@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.2</string>
 	<key>CFBundleVersion</key>
-	<string>17</string>
+	<string>19</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>The app requires camera access to take required photos.</string>
+	<string>Enable Tower Fox to access your camera to take the pending project photos required and upload to the server for review.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>The app requires access to your location when taking photos in order to mark the location on the photos.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -36,9 +36,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The app requires access to your location when taking photos in order to mark the location on the photos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>The app requires access to your photo library to import photos or save photos taken.</string>
+	<string>Enable Tower Fox to access your camera roll to import photos and save ones you've taken with the app.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>The app requires access to your photo library to import photos or save photos taken.</string>
+	<string>Enable Tower Fox to access your camera roll to import photos and save ones you've taken with the app.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ProximaNovaSoft-Bold.otf</string>
