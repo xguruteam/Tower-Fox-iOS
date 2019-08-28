@@ -82,6 +82,10 @@ func getDeleteProjectURL() -> String
     return getApplicationURL() + "DeleteDeviceInfoByProject";
 }
 
+func getLogURL() -> String {
+  return getApplicationURL() + "LogSyncError"
+}
+
 func getApplicationURL() -> String
 {
     if storage_loadObject("SERVER_IP") != nil {

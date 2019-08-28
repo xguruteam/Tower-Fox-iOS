@@ -90,6 +90,7 @@
 		CA9AD11822CD79A8003D580B /* INSPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10C22CD79A8003D580B /* INSPhotoViewController.swift */; };
 		CA9AD11922CD79A8003D580B /* INSPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10E22CD79A8003D580B /* INSPhoto.swift */; };
 		CA9AD11A22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9AD10F22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift */; };
+		CAD09B20230D238C00E043E4 /* ServerLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD09B1F230D238C00E043E4 /* ServerLog.swift */; };
 		CAD505DE213F8947004EBF33 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD505DD213F8947004EBF33 /* MainTabViewController.swift */; };
 		CAD505E021400DED004EBF33 /* RejectedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD505DF21400DED004EBF33 /* RejectedListViewController.swift */; };
 		CAD505E221400DFC004EBF33 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD505E121400DFC004EBF33 /* CategoriesViewController.swift */; };
@@ -195,6 +196,7 @@
 		CA9AD10C22CD79A8003D580B /* INSPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhotoViewController.swift; sourceTree = "<group>"; };
 		CA9AD10E22CD79A8003D580B /* INSPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPhoto.swift; sourceTree = "<group>"; };
 		CA9AD10F22CD79A8003D580B /* UIVIew+INSPhotoViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+INSPhotoViewer.swift"; sourceTree = "<group>"; };
+		CAD09B1F230D238C00E043E4 /* ServerLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLog.swift; sourceTree = "<group>"; };
 		CAD505DD213F8947004EBF33 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		CAD505DF21400DED004EBF33 /* RejectedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedListViewController.swift; sourceTree = "<group>"; };
 		CAD505E121400DFC004EBF33 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				CA75F4DA212FE05B003EDAAB /* Storyboardable.swift */,
 				CA75F4DB212FE05B003EDAAB /* UIExtensions.swift */,
 				CA75F4DC212FE05B003EDAAB /* WormLib */,
+				CAD09B1F230D238C00E043E4 /* ServerLog.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				CAD505E82141AA34004EBF33 /* TakeNewPhotoViewController.swift in Sources */,
 				CA75F511212FE05B003EDAAB /* WormTabStrip.swift in Sources */,
 				CA75F50A212FE05B003EDAAB /* AppManager.swift in Sources */,
+				CAD09B20230D238C00E043E4 /* ServerLog.swift in Sources */,
 				CA75F52E2130419A003EDAAB /* MainViewController.swift in Sources */,
 				CA75F4FF212FE05B003EDAAB /* MKRefreshControl.swift in Sources */,
 				CA75F4F6212FE05B003EDAAB /* MKCardView.swift in Sources */,
