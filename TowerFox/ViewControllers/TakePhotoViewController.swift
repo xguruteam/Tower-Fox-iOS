@@ -303,7 +303,7 @@ class TakePhotoViewController: UIViewController {
 
 extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true) { [unowned self] in
+        picker.dismiss(animated: true) {
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             let cropViewController = CropViewController(image: image)
             cropViewController.delegate = self
@@ -323,7 +323,8 @@ extension TakePhotoViewController: TakenPhotoDelegate {
 
 extension TakePhotoViewController: CropViewControllerDelegate {
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
-        cropViewController.dismiss(animated: true) {
+        cropViewController.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! FolderDetailViewController
             vc.capturedImage = image
             vc.isAdhoc = false

@@ -163,6 +163,12 @@ public class Database {
     
     func getHeaderCount(completionHandler: @escaping([String: Any]) -> Void) {
         var query = "";
+        if navigationStack.count < 1 {
+          ApiRequest.logOnServer(message: "Invalid Navigation Stack Depth.")
+            completionHandler([:])
+            return
+        }
+        
         let jsonObj = navigationStack[navigationStack.count - 1]
         if(jsonObj.SectorID == "0" || jsonObj.SectorID == "99999")
         {

@@ -185,7 +185,7 @@ extension SettingsViewController : UITableViewDelegate, UITableViewDataSource {
             let cell1 = cell as! AboutCell
             cell1.lblVersion.text = String(format: "Version %@",  (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String))
             cell1.lblDeviceModel.text = String(format: "Devce Model: %@", UIDevice.current.model)
-            cell1.lblPlatform.text = "CloseOut for iOS"
+            cell1.lblPlatform.text = "Tower Fox for iOS"
             cell1.lblDeviceVersion.text = String(format: "Device Version: %@", UIDevice.current.systemVersion)
         }else if indexPath.section == 2 {
             let cell2 = cell as! ServerAddressCell

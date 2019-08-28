@@ -354,6 +354,7 @@ public class Sync {
                             if(photoModel.TakenDate == nil || photoModel.TakenDate == "null" || photoModel.TakenDate == "")
                             {
                                 convertedDate = ""
+                              ApiRequest.logOnServer(message: "Illegal TakenDate format")
                             }
                             else
                             {
@@ -362,16 +363,18 @@ public class Sync {
                                     let startIndex = takenDate.index(takenDate.startIndex, offsetBy: 6)
                                     let endIndex = takenDate.index( startIndex, offsetBy: 10)
                                     let convertedate = takenDate[startIndex..<endIndex]
-                                    if let timeinterval = TimeInterval(String(convertedate)) {
+                                    if let timeinterval = TimeInterval(String(convertedate)), timeinterval > 0 {
                                         let date = Date(timeIntervalSince1970: timeinterval)
                                         let dateformatter = DateFormatter()
                                         dateformatter.dateFormat = "M/dd/yyyy,  h:mm:ss a"
                                         convertedDate = dateformatter.string(from: date)
                                     } else {
                                         convertedDate = ""
+                                      ApiRequest.logOnServer(message: "Illegal TakenDate format")
                                     }
                                 } else {
                                     convertedDate = ""
+                                  ApiRequest.logOnServer(message: "Illegal TakenDate format")
                                 }
                             }
                             var referenceImageName = ""
