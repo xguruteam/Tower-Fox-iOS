@@ -466,6 +466,21 @@ public class Database {
     }
     
     func updateImageTakenData( completionHandler: @escaping(Bool)->Void) {
+        guard
+            let _ = storage_loadObject("ImageName"),
+            let _ = storage_loadObject("Longitude"),
+            let _ = storage_loadObject("Latitude"),
+            let _ = storage_loadObject("UserName"),
+            let _ = storage_loadObject("TakenDate"),
+            let _ = storage_loadObject("SectorID"),
+            let _ = storage_loadObject("PositionID"),
+            let _ = storage_loadObject("AdhocPhotoID")
+            else {
+                ApiRequest.logOnServer(message: "updateImageTakenData: one of parameter is missing.")
+                completionHandler(false)
+                return
+        }
+        
         let query = "Update Photos set CapturedImageName=\"\(storage_loadObject("ImageName")!)\", Status=\"\(StatusEnum.PICTAKEN.rawValue)\", Longitude=\"\(storage_loadObject("Longitude")!)\", Latitude=\"\(storage_loadObject("Latitude")!)\", TakenBy=\"\(storage_loadObject("UserName")!)\", TakenDate=\"\(storage_loadObject("TakenDate")!)\", SectorID=\"\(storage_loadObject("SectorID")!)\", PositionID=\"\(storage_loadObject("PositionID")!)\" where AdhocPhotoID = \"\(storage_loadObject("AdhocPhotoID")!)\""
         do{
             try db.execute(query)
@@ -487,6 +502,25 @@ public class Database {
                 //console.log("Location: " + location + "CategoryName: " + jsonObj.CategoryName);
             }
         }
+        
+        guard
+            let _ = storage_loadObject("ProjectID"),
+            let _ = storage_loadObject("ParentID"),
+            let _ = storage_loadObject("ImageName"),
+            let _ = storage_loadObject("Longitude"),
+            let _ = storage_loadObject("Latitude"),
+            let _ = storage_loadObject("UserName"),
+            let _ = storage_loadObject("TakenDate"),
+            let _ = storage_loadObject("SectorID"),
+            let _ = storage_loadObject("PositionID"),
+            let _ = storage_loadObject("ItemName"),
+            let _ = storage_loadObject("Description")
+            else {
+                ApiRequest.logOnServer(message: "insertAdhocPhotoDataDB: one of parameter is missing.")
+                completionHandler(false)
+                return
+        }
+
         let query =  "INSERT INTO Photos (ProjectPhotoID, ProjectID, CategoryID, ItemID, SectorID, PositionID, ItemName, Description, TakenBy, TakenDate, Status, CapturedImageName, Quantity, Latitude, Longitude, IsAdhoc, AdhocPhotoID, ParentCategoryID) values (\"0\", \"\(storage_loadObject("ProjectID")!)\", \"\(storage_loadObject("ParentID")!)\", \"0\", \"\(storage_loadObject("SectorID")!)\", \"\(storage_loadObject("PositionID")!)\", \"\(storage_loadObject("ItemName")!)\", \"\(storage_loadObject("Description")!)\", \"\(storage_loadObject("UserName")!)\", \"\(storage_loadObject("TakenDate")!)\", \"\(StatusEnum.PICTAKEN.rawValue)\",\"\(storage_loadObject("ImageName")!)\", \"1\", \"\(storage_loadObject("Latitude")!)\", \"\(storage_loadObject("Longitude")!)\", \"true\", \"\(guid())\", \"\(parentCategoryID)\" )"
         do{
             try db.execute(query)
