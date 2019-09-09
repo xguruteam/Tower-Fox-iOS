@@ -307,6 +307,9 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigation
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             let cropViewController = CropViewController(image: image)
             cropViewController.delegate = self
+            if #available(iOS 13.0, *) {
+             cropViewController.modalPresentationStyle = .fullScreen
+            }
             self.present(cropViewController, animated: true, completion: nil)
         }
     }
