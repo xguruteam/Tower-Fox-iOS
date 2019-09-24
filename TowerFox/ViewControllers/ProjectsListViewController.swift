@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import Crashlytics
+
 class ProjectsListViewController: UIViewController {
 
     @IBOutlet weak var ermptyView: UIView!
@@ -331,15 +333,19 @@ extension ProjectsListViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        CLSLogv("%@", getVaList(["ProjectListViewController gotoCategory"]))
+        Crashlytics.sharedInstance().setObjectValue(storage_loadObject("UserName"), forKey: "UserName")
         self.navigationStack.removeAll()
         let project = projects[indexPath.row]
         if(project.ProjectID != "")
         {
             storage_saveObject("ProjectID", project.ProjectID);
+            Crashlytics.sharedInstance().setObjectValue(project.ProjectID, forKey: "ProjectID")
         }
         if(project.ProjectName != "")
         {
             storage_saveObject("ProjectName", project.ProjectName);
+            Crashlytics.sharedInstance().setObjectValue(project.ProjectName, forKey: "ProjectName")
         }
         if(project.PaceID != "")
         {
