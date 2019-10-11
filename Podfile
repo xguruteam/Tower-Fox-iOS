@@ -22,7 +22,7 @@ target 'Tower Fox' do
   pod 'AFNetworking'
   
   pod 'Toaster'
-  pod 'CropViewController'
+  pod 'CropViewController', '2.5.1'
   
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'

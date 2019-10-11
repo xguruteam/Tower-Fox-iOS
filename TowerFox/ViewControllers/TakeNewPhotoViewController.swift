@@ -138,10 +138,14 @@ class TakeNewPhotoViewController: UIViewController {
 }
 extension TakeNewPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true) { [unowned self] in
+        picker.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let cropViewController = CropViewController(image: image)
+            let cropViewController = CropViewController(croppingStyle: .default, image: image)
             cropViewController.delegate = self
+            if #available(iOS 13.0, *) {
+                cropViewController.modalPresentationStyle = .fullScreen
+            }
             self.present(cropViewController, animated: true, completion: nil)
         }
     }
@@ -159,7 +163,8 @@ extension TakeNewPhotoViewController : TakenPhotoDelegate {
 
 extension TakeNewPhotoViewController: CropViewControllerDelegate {
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
-        cropViewController.dismiss(animated: true) {
+        cropViewController.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! FolderDetailViewController
             vc.capturedImage = image
             vc.isAdhoc = true

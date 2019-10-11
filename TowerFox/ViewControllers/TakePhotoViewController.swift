@@ -303,9 +303,10 @@ class TakePhotoViewController: UIViewController {
 
 extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true) {
+        picker.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let cropViewController = CropViewController(image: image)
+            let cropViewController = CropViewController(croppingStyle: .default, image: image)
             cropViewController.delegate = self
             if #available(iOS 13.0, *) {
              cropViewController.modalPresentationStyle = .fullScreen
