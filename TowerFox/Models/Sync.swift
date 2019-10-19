@@ -15,6 +15,7 @@ import Alamofire
 import AFNetworking
 import SDWebImage
 import Photos
+import Crashlytics
 
 let s3URI = "https://lifecycle-closeout-demo-photos.s3.amazonaws.com/"
 //let s3URI = "https://d24mkkhodirsc3.cloudfront.net/"
@@ -871,8 +872,13 @@ public class Sync {
                 jsonData["TakenBy"] = p["TakenBy"]
                 let dateformatter = DateFormatter()
                 dateformatter.dateFormat = "M/dd/yyyy, hh:mm:ss a"
+                if let dateString = p["TakenDate"] as? String, let date = dateformatter.date(from: dateString) {
+                    jsonData["TakenDate"] = "/Date(\(Int((date.timeIntervalSince1970) * 1000)))/"
+                } else {
+                    CLSLogv("%@", getVaList(["Photo taken Date error"]))
+                    jsonData["TakenDate"] = "/Date(0))/"
+                }
                 let date = dateformatter.date(from: p["TakenDate"] as! String)
-                jsonData["TakenDate"] = "/Date(\(Int((date?.timeIntervalSince1970)! * 1000)))/"
                 jsonData["IsAdhoc"] = p["IsAdhoc"]
                 jsonData["Latitude"] = p["Latitude"]
                 jsonData["Longitude"] = p["Longitude"]
