@@ -264,69 +264,82 @@ class FolderDetailViewController: UIViewController {
             if isAdhoc {
                 Database.sharedInstance.insertAdhocPhotoDataDB { (success) in
                     appDel.hideHUD()
-                   if success {
-                        if self.saveAndContinueFlag {
-                            Database.sharedInstance.getNextItemToDisplay(completionHandler: { (data) in
-                                if data.count == 0 {
-                                    Sync.sharedInstance.uploadDataToServer()
-                                }
-                                
-                                self.dismiss(animated: true, completion: {
-                                    if self.delegate != nil {
-                                        self.delegate.didUpdateTakenPhoto()
-                                    }
-                                })
-                            })
-                        }else if self.isRLList {
-                            Database.sharedInstance.isFromBagroundSync = true
-                            Sync.sharedInstance.uploadDataToServer()
+                    guard success else {
+                        let alert = UIAlertController(title: "Error", message: "Something went wrong while updating data, please try again later.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+                            self.dismiss(animated: true, completion: nil)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                        return
+                    }
+                    if self.saveAndContinueFlag {
+                        Database.sharedInstance.getNextItemToDisplay(completionHandler: { (data) in
+                            if data.count == 0 {
+                                Sync.sharedInstance.uploadDataToServer()
+                            }
+                            
                             self.dismiss(animated: true, completion: {
                                 if self.delegate != nil {
                                     self.delegate.didUpdateTakenPhoto()
                                 }
                             })
-                        }else{
-                            Sync.sharedInstance.uploadDataToServer()
-                            self.dismiss(animated: true, completion: {
-                                if self.delegate != nil {
-                                    self.delegate.didUpdateTakenPhoto()
-                                }
-                            })
-                        }
+                        })
+                    }else if self.isRLList {
+                        Database.sharedInstance.isFromBagroundSync = true
+                        Sync.sharedInstance.uploadDataToServer()
+                        self.dismiss(animated: true, completion: {
+                            if self.delegate != nil {
+                                self.delegate.didUpdateTakenPhoto()
+                            }
+                        })
+                    }else{
+                        Sync.sharedInstance.uploadDataToServer()
+                        self.dismiss(animated: true, completion: {
+                            if self.delegate != nil {
+                                self.delegate.didUpdateTakenPhoto()
+                            }
+                        })
                     }
                 }
             }else{
                 Database.sharedInstance.updateImageTakenData { (success) in
                     appDel.hideHUD()
-                    if success {
-                        if self.saveAndContinueFlag {
-                            Database.sharedInstance.getNextItemToDisplay(completionHandler: { (data) in
-                                if data.count == 0 {
-                                    Sync.sharedInstance.uploadDataToServer()
-                                }
-                                
-                                self.dismiss(animated: true, completion: {
-                                    if self.delegate != nil {
-                                        self.delegate.didUpdateTakenPhoto()
-                                    }
-                                })
-                            })
-                        }else if self.isRLList {
-                            Database.sharedInstance.isFromBagroundSync = true
-                            Sync.sharedInstance.uploadDataToServer()
+                    guard success else {
+                        let alert = UIAlertController(title: "Error", message: "Something went wrong while updating data, please try again later.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+                            self.dismiss(animated: true, completion: nil)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                        return
+                    }
+                    
+                    if self.saveAndContinueFlag {
+                        Database.sharedInstance.getNextItemToDisplay(completionHandler: { (data) in
+                            if data.count == 0 {
+                                Sync.sharedInstance.uploadDataToServer()
+                            }
+                            
                             self.dismiss(animated: true, completion: {
                                 if self.delegate != nil {
                                     self.delegate.didUpdateTakenPhoto()
                                 }
                             })
-                        }else{
-                            Sync.sharedInstance.uploadDataToServer()
-                            self.dismiss(animated: true, completion: {
-                                if self.delegate != nil {
-                                    self.delegate.didUpdateTakenPhoto()
-                                }
-                            })
-                        }
+                        })
+                    }else if self.isRLList {
+                        Database.sharedInstance.isFromBagroundSync = true
+                        Sync.sharedInstance.uploadDataToServer()
+                        self.dismiss(animated: true, completion: {
+                            if self.delegate != nil {
+                                self.delegate.didUpdateTakenPhoto()
+                            }
+                        })
+                    }else{
+                        Sync.sharedInstance.uploadDataToServer()
+                        self.dismiss(animated: true, completion: {
+                            if self.delegate != nil {
+                                self.delegate.didUpdateTakenPhoto()
+                            }
+                        })
                     }
                 }
             }
