@@ -172,6 +172,9 @@ extension TakeNewPhotoViewController: CropViewControllerDelegate {
             vc.galleryPath = "Adhoc"
             storage_saveObject("ItemName", self.txtPhotoName.text!)
             storage_saveObject("Description", self.txtPhotoDescription.text!)
+            if let projectName = storage_loadObject("ProjectName") {
+                storage_saveObject("AlbumName", projectName)
+            }
             self.present(vc, animated: true, completion: nil)
         }
         cropViewController.delegate = nil //to avoid memory leaks

@@ -190,6 +190,9 @@ class TakePhotoViewController: UIViewController {
             self.lblCategoryName.text = d
             let dirs = d.split(separator: ">").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             self.galleryPath = dirs.joined(separator: "/")
+            if let album = dirs.first {
+                storage_saveObject("AlbumName", album as! NSString)
+            }
             return
         }
         lblItemName.text = photoDetail["Description"] as? String

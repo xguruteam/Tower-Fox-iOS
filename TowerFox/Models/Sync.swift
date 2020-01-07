@@ -643,16 +643,16 @@ public class Sync {
                     
                     print("--------------->\n\(response.destinationURL!)")
                     
-                    let url = response.destinationURL!
-                    let path = url.path
-                    if let downloadedImage = UIImage(contentsOfFile: path) {
-                        let fileName = url.lastPathComponent
-                        let infos = fileName.split(separator: "_")
-                        if let projectID = infos.first {
-                            print("projectID: \(projectID)")
-                            PHPhotoLibrary.shared().save(image: downloadedImage, path: String(projectID))
-                        }
-                    }
+//                    let url = response.destinationURL!
+//                    let path = url.path
+//                    if let downloadedImage = UIImage(contentsOfFile: path) {
+//                        let fileName = url.lastPathComponent
+//                        let infos = fileName.split(separator: "_")
+//                        if let projectID = infos.first {
+//                            print("projectID: \(projectID)")
+//                            PHPhotoLibrary.shared().save(image: downloadedImage, path: String(projectID))
+//                        }
+//                    }
                     DispatchQueue.main.async {
                         self.downloadCapturedCount = self.downloadCapturedCount + 1
                         if self.downloadCapturedCount < self.capturedImageNamesList.count {

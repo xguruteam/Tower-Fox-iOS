@@ -49,6 +49,10 @@ class FolderDetailViewController: UIViewController {
             detailText = String(format: "Lat: 0\nLong: 0\n%@", fulldateString)
         }
 
+        if let albumName = storage_loadObject("AlbumName") {
+            print("Album of photo: \(albumName)")
+        }
+        
         self.lblDetail.text = ""
         self.addNavigationItem()
         if storage_loadObject("ItemsCount") == nil || storage_loadObject("ItemsCount") == "" {
@@ -346,23 +350,25 @@ class FolderDetailViewController: UIViewController {
         }
 
         // save to gallery
-        PHPhotoLibrary.shared().save(image: image, path: "Backup") { (asset) in
-//            DispatchQueue.main.async {
-//                if let asset = asset {
-//                    let toast  = Toast(text: "Successfully saved photo to Photos Gallery", duration: Delay.short)
-//                    ToastView.appearance().backgroundColor = UIColor.appMainColor
-//                    ToastView.appearance().textColor = .white
-//                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
-//                    toast.show()
-//                }
-//                else {
-//                    let toast  = Toast(text: "Failed to save photo to Photos Gallery", duration: Delay.short)
-//                    ToastView.appearance().backgroundColor = UIColor.appRedColor
-//                    ToastView.appearance().textColor = .white
-//                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
-//                    toast.show()
-//                }
-//            }
+        if let albumName = storage_loadObject("AlbumName") {
+            PHPhotoLibrary.shared().save(image: image, path: albumName) { (asset) in
+                //            DispatchQueue.main.async {
+                //                if let asset = asset {
+                //                    let toast  = Toast(text: "Successfully saved photo to Photos Gallery", duration: Delay.short)
+                //                    ToastView.appearance().backgroundColor = UIColor.appMainColor
+                //                    ToastView.appearance().textColor = .white
+                //                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
+                //                    toast.show()
+                //                }
+                //                else {
+                //                    let toast  = Toast(text: "Failed to save photo to Photos Gallery", duration: Delay.short)
+                //                    ToastView.appearance().backgroundColor = UIColor.appRedColor
+                //                    ToastView.appearance().textColor = .white
+                //                    ToastView.appearance().font = UIFont(name: "ProximaNovaSoft-Regular", size: 14)
+                //                    toast.show()
+                //                }
+                //            }
+            }
         }
     }
 
