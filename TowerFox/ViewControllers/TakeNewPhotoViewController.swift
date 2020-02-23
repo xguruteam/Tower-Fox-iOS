@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CropViewController
 
 class TakeNewPhotoViewController: UIViewController {
 
@@ -141,30 +140,6 @@ extension TakeNewPhotoViewController: UIImagePickerControllerDelegate, UINavigat
         picker.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let cropViewController = CropViewController(croppingStyle: .default, image: image)
-            cropViewController.delegate = self
-            if #available(iOS 13.0, *) {
-                cropViewController.modalPresentationStyle = .fullScreen
-            }
-            self.present(cropViewController, animated: true, completion: nil)
-        }
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension TakeNewPhotoViewController : TakenPhotoDelegate {
-    func didUpdateTakenPhoto() {
-        self.navigationController?.popDissolve()
-    }
-}
-
-extension TakeNewPhotoViewController: CropViewControllerDelegate {
-    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
-        cropViewController.dismiss(animated: true) { [weak self] in
-            guard let self = self else { return }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! FolderDetailViewController
             vc.capturedImage = image
             vc.isAdhoc = true
@@ -177,6 +152,15 @@ extension TakeNewPhotoViewController: CropViewControllerDelegate {
             }
             self.present(vc, animated: true, completion: nil)
         }
-        cropViewController.delegate = nil //to avoid memory leaks
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension TakeNewPhotoViewController : TakenPhotoDelegate {
+    func didUpdateTakenPhoto() {
+        self.navigationController?.popDissolve()
     }
 }

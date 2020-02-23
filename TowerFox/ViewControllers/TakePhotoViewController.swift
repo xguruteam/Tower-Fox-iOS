@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CropViewController
 
 class CustomPhotoModel: NSObject, INSPhotoViewable {
     var image: UIImage?
@@ -309,12 +308,12 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigation
         picker.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let cropViewController = CropViewController(croppingStyle: .default, image: image)
-            cropViewController.delegate = self
-            if #available(iOS 13.0, *) {
-             cropViewController.modalPresentationStyle = .fullScreen
-            }
-            self.present(cropViewController, animated: true, completion: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! FolderDetailViewController
+            vc.capturedImage = image
+            vc.isAdhoc = false
+            vc.delegate = self
+            vc.galleryPath = self.galleryPath
+            self.present(vc, animated: true, completion: nil)
         }
     }
     
@@ -325,20 +324,5 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate, UINavigation
 
 extension TakePhotoViewController: TakenPhotoDelegate {
     func didUpdateTakenPhoto() {
-    }
-}
-
-extension TakePhotoViewController: CropViewControllerDelegate {
-    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
-        cropViewController.dismiss(animated: true) { [weak self] in
-            guard let self = self else { return }
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! FolderDetailViewController
-            vc.capturedImage = image
-            vc.isAdhoc = false
-            vc.delegate = self
-            vc.galleryPath = self.galleryPath
-            self.present(vc, animated: true, completion: nil)
-        }
-        cropViewController.delegate = nil //to avoid memory leaks
     }
 }

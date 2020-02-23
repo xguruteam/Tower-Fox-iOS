@@ -26,7 +26,6 @@ PODS:
     - AWSCore (= 2.6.26)
   - Crashlytics (3.13.1):
     - Fabric (~> 1.10.1)
-  - CropViewController (2.5.1)
   - CryptoSwift (0.11.0)
   - DropDown (2.3.2)
   - Fabric (1.10.1)
@@ -102,7 +101,6 @@ DEPENDENCIES:
   - AWSMobileClient
   - AWSS3
   - Crashlytics (~> 3.13.1)
-  - CropViewController (= 2.5.1)
   - CryptoSwift
   - DropDown
   - Fabric (~> 1.10.1)
@@ -118,7 +116,7 @@ DEPENDENCIES:
   - Toaster
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - Alamofire
     - AWSAuthCore
@@ -127,7 +125,6 @@ SPEC REPOS:
     - AWSMobileClient
     - AWSS3
     - Crashlytics
-    - CropViewController
     - CryptoSwift
     - DropDown
     - Fabric
@@ -156,7 +153,6 @@ SPEC CHECKSUMS:
   AWSMobileClient: 1800cc78a28d49ac4b03deef5aefae8395f952b3
   AWSS3: 4d857a223704bd956e91a659aec17ba1896ee0a9
   Crashlytics: 5aa8e90dcbf2f34898b4f5a0037787531246cca0
-  CropViewController: 10ba7af75e302f2db7eb913f8aa1156f95cfe88e
   CryptoSwift: ad5208dd2aae0a764ea4ce2c2d34bd067cae67f0
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Fabric: f6f21452846788bb44595d73e9909d79d328e617
@@ -176,6 +172,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: da76afd8ab36046c3e939361fbce51c1eb3a25f0
+PODFILE CHECKSUM: f62c579e50c6e984f7e1cbe7bc65ef260de8d6ef
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
