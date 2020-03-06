@@ -835,7 +835,7 @@
 				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = SPUBD8FU49;
 				INFOPLIST_FILE = "$(SRCROOT)/TowerFox/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -861,7 +861,7 @@
 				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = SPUBD8FU49;
 				INFOPLIST_FILE = "$(SRCROOT)/TowerFox/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
