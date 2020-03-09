@@ -28,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         Fabric.sharedSDK().debug = true
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.appOnMainColor], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.appMainColor], for: UIControlState.normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "ProximaNovaSoft-Regular", size: 14.0) as Any, NSAttributedStringKey.foregroundColor: UIColor.white], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "ProximaNovaSoft-Regular", size: 14.0) as Any, NSAttributedStringKey.foregroundColor: UIColor.appOnMainColor], for: .normal)
         IQKeyboardManager.shared.enable = true
         if UserDefaults.standard.object(forKey: "TokenID") == nil {
             storage_saveObject("TokenID", "")
