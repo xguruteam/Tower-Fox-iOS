@@ -49,7 +49,7 @@ class CategoriesViewController: UIViewController {
         let backTitle = UILabel(frame: CGRect(x: 16, y: 0, width: 50, height: 36))
         backTitle.text = "Back"
         backTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-        backTitle.textColor = UIColor.white
+        backTitle.textColor = UIColor.appOnMainColor
         backView.addSubview(backimage)
         backView.addSubview(backTitle)
         backView.addTarget(self, action: #selector(BackButtonClicked(_:)), for: .touchUpInside)
@@ -65,7 +65,7 @@ class CategoriesViewController: UIViewController {
             let nextTitle = UILabel(frame: CGRect(x: 16, y: 0, width: 40, height: 36))
             nextTitle.text = "Top"
             nextTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-            nextTitle.textColor = UIColor.white
+            nextTitle.textColor = UIColor.appOnMainColor
             nextView.addSubview(nextImage)
             nextView.addSubview(nextTitle)
             nextView.addTarget(self, action: #selector(TopButtonClicked(_:)), for: .touchUpInside)
@@ -325,7 +325,7 @@ extension CategoriesViewController : UITableViewDelegate, UITableViewDataSource{
         }else{
             if section == 1 {
                 let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 36))
-                view.backgroundColor = UIColor(rgba: "#EBEBF1")
+                view.backgroundColor = UIColor.appTblHeadBackColor
                 let label = UILabel(frame: CGRect(x: 16, y: 0, width: self.view.frame.size.width - 32, height: 36))
                 var title = ""
                 for cat in Database.sharedInstance.categoriesStack {
