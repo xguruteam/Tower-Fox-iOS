@@ -145,7 +145,7 @@ extension RejectedListViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 36))
-        view.backgroundColor = UIColor(rgba: "#EBEBF1")
+        view.backgroundColor = UIColor.appTblHeadBackColor
         let label = UILabel(frame: CGRect(x: 16, y: 0, width: self.view.frame.size.width - 32, height: 36))
         label.text = self.rejectHeaders[section]
         label.font = UIFont(name: "ProximaNovaSoft-Regular", size: 14.0)
