@@ -303,7 +303,8 @@ extension UIColor {
             blue: CGFloat(arc4random_uniform(256))/255,
             alpha: 1)
     }
-    static let appMainColor = UIColor(rgba: "#465A50")//177FC3
+  static let appMainColor = UIColor(named: "App-primary-color")!
+  //UIColor(rgba: "#465A50")//177FC3
     static let appBlueColor = UIColor(rgba: "#1f69b3")
     static let appRedColor = UIColor(rgba: "#E23E3E")
     static let appMainDarkColor = UIColor(rgba: "#283d14")

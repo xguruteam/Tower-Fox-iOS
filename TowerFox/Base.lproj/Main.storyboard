@@ -63,7 +63,7 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="App-primary-color "/>
+                                <color key="backgroundColor" name="App-primary-color"/>
                                 <constraints>
                                     <constraint firstItem="BBF-TC-HwL" firstAttribute="centerY" secondItem="kj0-fb-Va9" secondAttribute="centerY" id="Aiz-d7-wbh"/>
                                     <constraint firstItem="kj0-fb-Va9" firstAttribute="centerX" secondItem="L87-b4-xVR" secondAttribute="centerX" id="Ie6-m7-cuU"/>
@@ -223,7 +223,7 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="App-primary-color "/>
+                                <color key="backgroundColor" name="App-primary-color"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="syB-Zy-Kpm" secondAttribute="bottom" id="3aM-yH-1RP"/>
                                     <constraint firstItem="syB-Zy-Kpm" firstAttribute="centerY" secondItem="mQd-TV-w4H" secondAttribute="centerY" id="43C-wI-5Hj"/>
@@ -472,7 +472,7 @@
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-dg-WYq">
                                                             <rect key="frame" x="0.0" y="104" width="287" height="44"/>
-                                                            <color key="backgroundColor" name="App-primary-color "/>
+                                                            <color key="backgroundColor" name="App-primary-color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="A0C-pR-LoG"/>
                                                             </constraints>
@@ -513,7 +513,7 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0b-PT-Vw3">
                                                             <rect key="frame" x="0.0" y="58" width="287" height="44"/>
-                                                            <color key="backgroundColor" name="App-primary-color "/>
+                                                            <color key="backgroundColor" name="App-primary-color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="izz-gZ-qZ8"/>
                                                             </constraints>
@@ -548,7 +548,7 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyt-c5-oqp">
                                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
-                                                            <color key="backgroundColor" name="App-primary-color "/>
+                                                            <color key="backgroundColor" name="App-primary-color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="XG5-KM-eic"/>
                                                             </constraints>
@@ -559,7 +559,7 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlR-BB-6et">
                                                             <rect key="frame" x="0.0" y="60" width="287" height="44"/>
-                                                            <color key="backgroundColor" name="App-primary-color "/>
+                                                            <color key="backgroundColor" name="App-primary-color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="HD7-UY-IHd"/>
                                                             </constraints>
@@ -619,7 +619,7 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="App-primary-color "/>
+                                <color key="backgroundColor" name="App-primary-color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="llI-Qi-U6N" secondAttribute="trailing" constant="8" id="JuL-us-SrJ"/>
                                     <constraint firstItem="llI-Qi-U6N" firstAttribute="centerY" secondItem="or9-vR-9RP" secondAttribute="centerY" id="QeW-EZ-cBI"/>
@@ -629,7 +629,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KQN-Jl-B05" firstAttribute="top" secondItem="OXe-9H-dV2" secondAttribute="top" id="4MP-IN-qEB"/>
                             <constraint firstItem="5kx-gJ-gtr" firstAttribute="leading" secondItem="o9b-VA-fZm" secondAttribute="leading" constant="8" id="Agl-GK-EZR"/>
@@ -1310,7 +1310,7 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="App-primary-color "/>
+                                <color key="backgroundColor" name="App-primary-color"/>
                                 <constraints>
                                     <constraint firstItem="gXZ-Rz-4Q4" firstAttribute="centerY" secondItem="GoO-T2-R7s" secondAttribute="centerY" id="1uF-sd-xqw"/>
                                     <constraint firstItem="7gD-5l-5VR" firstAttribute="centerY" secondItem="GoO-T2-R7s" secondAttribute="centerY" id="7w2-sp-Q8u"/>
@@ -1519,13 +1519,13 @@
                         </textAttributes>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="darkColor">
-                                <color key="value" name="App-primary-color "/>
+                                <color key="value" name="App-primary-color"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" name="App-primary-color "/>
+                                <color key="value" name="App-primary-color"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="value" name="App-onprimary-color"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
@@ -1693,7 +1693,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Hec-dW-j3N" firstAttribute="top" secondItem="OrG-Y7-cfA" secondAttribute="bottom" constant="16" id="2iZ-HI-Agf"/>
                                     <constraint firstAttribute="trailing" secondItem="Hec-dW-j3N" secondAttribute="trailing" id="8mw-cu-WDa"/>
@@ -1802,10 +1802,10 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" name="App-primary-color "/>
+                                <color key="value" name="App-primary-color"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="darkColor">
-                                <color key="value" name="App-primary-color "/>
+                                <color key="value" name="App-primary-color"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
@@ -1851,7 +1851,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="AddProject-view-background"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WOg-yM-6B1" firstAttribute="top" secondItem="sM0-ei-CGH" secondAttribute="top" constant="24" id="7yg-Bz-Fbq"/>
                             <constraint firstItem="WOg-yM-6B1" firstAttribute="trailing" secondItem="sM0-ei-CGH" secondAttribute="trailing" id="Ord-QY-k4q"/>
@@ -2478,10 +2478,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTE-I6-Cis">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lTE-I6-Cis">
                                 <rect key="frame" x="0.0" y="154.66666666666666" width="375" height="66"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VuC-Gh-K21" customClass="GrowingTextView" customModule="Tower_Fox" customModuleProvider="target">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VuC-Gh-K21" customClass="GrowingTextView" customModule="Tower_Fox" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="359" height="50"/>
                                         <color key="backgroundColor" name="App-textfiled-background"/>
                                         <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="18"/>
@@ -3054,11 +3054,11 @@
         <image name="ic_tune" width="18" height="18"/>
         <image name="ic_warning" width="26" height="22"/>
         <image name="sync" width="18" height="18"/>
-        <namedColor name="AddProject-view-background">
-            <color red="0.92199999094009399" green="0.92199999094009399" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="App-onprimary-color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="App-primary-color">
+            <color red="0.27500000596046448" green="0.3529999852180481" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="App-primary-color ">
             <color red="0.27500000596046448" green="0.3529999852180481" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3079,7 +3079,7 @@
             <color white="0.33000001311302185" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="Projects-progress-background">
-            <color red="0.93699997663497925" green="0.93699997663497925" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="category-approved">
             <color red="0.13300000131130219" green="0.67100000381469727" blue="0.43500000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
