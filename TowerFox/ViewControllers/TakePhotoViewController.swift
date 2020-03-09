@@ -95,7 +95,7 @@ class TakePhotoViewController: UIViewController {
         let backTitle = UILabel(frame: CGRect(x: 16, y: 0, width: 50, height: 36))
         backTitle.text = "Cancel"
         backTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-        backTitle.textColor = UIColor.white
+        backTitle.textColor = UIColor.appOnMainColor
         backView.addSubview(backimage)
         backView.addSubview(backTitle)
         backView.addTarget(self, action: #selector(BackButtonClicked(_:)), for: .touchUpInside)
@@ -110,7 +110,7 @@ class TakePhotoViewController: UIViewController {
         let nextTitle = UILabel(frame: CGRect(x: 16, y: 0, width: 40, height: 36))
         nextTitle.text = "Top"
         nextTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-        nextTitle.textColor = UIColor.white
+        nextTitle.textColor = UIColor.appOnMainColor
         nextView.addSubview(nextImage)
         nextView.addSubview(nextTitle)
         nextView.addTarget(self, action: #selector(TopButtonClicked(_:)), for: .touchUpInside)
@@ -170,7 +170,7 @@ class TakePhotoViewController: UIViewController {
             let deleteTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 36))
             deleteTitle.text = "Delete"
             deleteTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-            deleteTitle.textColor = UIColor.white
+            deleteTitle.textColor = UIColor.appOnMainColor
             deleteView.addSubview(deleteTitle)
             deleteView.addTarget(self, action: #selector(DeleteButtonClicked(_:)), for: .touchUpInside)
             let deleteItem = UIBarButtonItem(customView: deleteView)

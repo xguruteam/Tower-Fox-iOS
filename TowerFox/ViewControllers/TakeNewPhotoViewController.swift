@@ -102,7 +102,7 @@ class TakeNewPhotoViewController: UIViewController {
         let backTitle = UILabel(frame: CGRect(x: 16, y: 0, width: 50, height: 36))
         backTitle.text = "Cancel"
         backTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-        backTitle.textColor = UIColor.white
+        backTitle.textColor = UIColor.appOnMainColor
         backView.addSubview(backimage)
         backView.addSubview(backTitle)
         backView.addTarget(self, action: #selector(CancelButtonClicked(_:)), for: .touchUpInside)

@@ -172,7 +172,7 @@ class FolderDetailViewController: UIViewController {
         let backTitle = UILabel(frame: CGRect(x: 16, y: 0, width: 50, height: 36))
         backTitle.text = "Cancel"
         backTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-        backTitle.textColor = UIColor.white
+        backTitle.textColor = UIColor.appOnMainColor
         backView.addSubview(backimage)
         backView.addSubview(backTitle)
         backView.addTarget(self, action: #selector(CancelButtonClicked(_:)), for: .touchUpInside)
@@ -188,7 +188,7 @@ class FolderDetailViewController: UIViewController {
         nextTitle.text = "Next"
         nextTitle.textAlignment = .right
         nextTitle.font = UIFont(name: "ProximaNovaSoft-Regular", size: 16.0)
-        nextTitle.textColor = UIColor.white
+        nextTitle.textColor = UIColor.appOnMainColor
         nextView.addSubview(nextImage)
         nextView.addSubview(nextTitle)
         nextView.addTarget(self, action: #selector(NextButtonClicked(_:)), for: .touchUpInside)
