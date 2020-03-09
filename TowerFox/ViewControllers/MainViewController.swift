@@ -171,8 +171,8 @@ class MainViewController: UIViewController {
     @IBAction func ProjectListButtonClicked(_ sender: MKCardView) {
         self.btnProjectList.backgroundColor = UIColor.appMainColor
         self.imvProjectList.image = #imageLiteral(resourceName: "ic_list_white")
-        self.lblProjectList.textColor = UIColor.white
-        self.btnRejectedList.backgroundColor = UIColor.white
+        self.lblProjectList.textColor = UIColor.appOnMainColor
+        self.btnRejectedList.backgroundColor = UIColor.appOnMainColor
         self.imvRejectedList.image = #imageLiteral(resourceName: "ic_list_blue")
         self.lblRejectedList.textColor = UIColor.appMainColor
         self.btnProjectList.exchangeSubview(at: 0, withSubviewAt: 1)
@@ -183,12 +183,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func RejectedListButtonClicked(_ sender: MKCardView) {
-        self.btnProjectList.backgroundColor = UIColor.white
+        self.btnProjectList.backgroundColor = UIColor.appOnMainColor
         self.imvProjectList.image = #imageLiteral(resourceName: "ic_list_blue")
         self.lblProjectList.textColor = UIColor.appMainColor
         self.btnRejectedList.backgroundColor = UIColor.appMainColor
         self.imvRejectedList.image = #imageLiteral(resourceName: "ic_list_white")
-        self.lblRejectedList.textColor = UIColor.white
+        self.lblRejectedList.textColor = UIColor.appOnMainColor
         self.bottomStackView.sendSubview(toBack: self.btnProjectList)
         self.isProjectList = false
         self.isCategory = false
@@ -519,7 +519,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource{
                 return UIView()
             }else{
                 let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 36))
-                view.backgroundColor = UIColor(rgba: "#EBEBF1")
+                view.backgroundColor = UIColor.appTblHeadBackColor
                 let label = UILabel(frame: CGRect(x: 16, y: 0, width: self.view.frame.size.width - 32, height: 36))
                 label.text = self.rejectHeaders[section]
                 label.font = UIFont(name: "ProximaNovaSoft-Regular", size: 14.0)
