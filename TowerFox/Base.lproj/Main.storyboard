@@ -2156,7 +2156,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save and return to list" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVx-Xc-njN">
                                                 <rect key="frame" x="135" y="7.9999999999999982" width="137.33333333333337" height="16.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Semibold" family="Proxima Nova Soft" pointSize="14"/>
-                                                <color key="textColor" red="0.27450980390000002" green="0.35294117650000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" name="App-primary-color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_blue" translatesAutoresizingMaskIntoConstraints="NO" id="P9I-Gk-mnf">
@@ -2167,7 +2167,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="App-textfiled-background"/>
                                         <constraints>
                                             <constraint firstItem="iVx-Xc-njN" firstAttribute="top" secondItem="hqk-oT-leh" secondAttribute="top" constant="8" id="VH9-2G-VwN"/>
                                             <constraint firstItem="P9I-Gk-mnf" firstAttribute="centerY" secondItem="iVx-Xc-njN" secondAttribute="centerY" id="mHd-jb-AMX"/>
@@ -2252,7 +2252,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" name="App-onprimary-color"/>
+                                        <color key="backgroundColor" name="App-textfiled-background"/>
                                         <constraints>
                                             <constraint firstItem="TAd-E0-OaB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dSJ-xs-679" secondAttribute="trailing" constant="8" id="19O-Jt-GPV"/>
                                             <constraint firstItem="dSJ-xs-679" firstAttribute="top" secondItem="OPg-XT-gKW" secondAttribute="top" constant="12.67" id="Ma1-fj-Xh3"/>
