@@ -24,14 +24,14 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         
         // Content View
-        contentView.backgroundColor = UIColor.appLightGrayColor
+        contentView.backgroundColor = UIColor.appCollapsTblBackColor
         
         let marginGuide = contentView.layoutMarginsGuide
         
         // Arrow label
         contentView.addSubview(arrowLabel)
         arrowLabel.setImage(#imageLiteral(resourceName: "ic_right"), for: .normal)
-        arrowLabel.tintColor = UIColor.black
+        arrowLabel.tintColor = UIColor.appCollapsTblForeColor
         arrowLabel.translatesAutoresizingMaskIntoConstraints = false
         arrowLabel.widthAnchor.constraint(equalToConstant: 12).isActive = true
         arrowLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
@@ -40,7 +40,7 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         
         // Title label
         contentView.addSubview(titleLabel)
-        titleLabel.textColor = UIColor.black
+        titleLabel.textColor = UIColor.appCollapsTblForeColor
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
@@ -72,14 +72,14 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         if collapsed {
             UIView.animate(withDuration: 0.5) {
                 self.arrowLabel.setImage(#imageLiteral(resourceName: "ic_down"), for: .normal)
-                self.arrowLabel.tintColor = UIColor.black
+                self.arrowLabel.tintColor = UIColor.appCollapsTblForeColor
                 self.titleLabel.textColor = UIColor.appMainColor
             }
         }else{
             UIView.animate(withDuration: 0.5) {
                 self.arrowLabel.setImage(#imageLiteral(resourceName: "ic_right"), for: .normal)
-                self.arrowLabel.tintColor = UIColor.black
-                self.titleLabel.textColor = UIColor.black
+                self.arrowLabel.tintColor = UIColor.appCollapsTblForeColor
+                self.titleLabel.textColor = UIColor.appCollapsTblForeColor
             }
         }
     }

@@ -306,6 +306,8 @@ extension UIColor {
     static let appMainColor = UIColor(named: "App-primary-color")! //UIColor(rgba: "#465A50")//177FC3
     static let appOnMainColor = UIColor(named: "App-onprimary-color")!
     static let appTblHeadBackColor = UIColor(named: "AddProject-view-background")!
+    static let appCollapsTblBackColor = UIColor(named: "Settings-table-head-background")!
+    static let appCollapsTblForeColor = UIColor(named: "Settings-table-head-foreground")!
     static let appBlueColor = UIColor(rgba: "#1f69b3")
     static let appRedColor = UIColor(rgba: "#E23E3E")
     static let appMainDarkColor = UIColor(rgba: "#283d14")
