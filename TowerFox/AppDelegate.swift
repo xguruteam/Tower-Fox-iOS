@@ -28,9 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         Fabric.sharedSDK().debug = true
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.appOnMainColor], for: .selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.appMainColor], for: UIControlState.normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "ProximaNovaSoft-Regular", size: 14.0) as Any, NSAttributedStringKey.foregroundColor: UIColor.appOnMainColor], for: .normal)
         IQKeyboardManager.shared.enable = true
         if UserDefaults.standard.object(forKey: "TokenID") == nil {
             storage_saveObject("TokenID", "")
@@ -65,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.appOnMainColor], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.appMainColor], for: UIControlState.normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "ProximaNovaSoft-Regular", size: 14.0) as Any, NSAttributedStringKey.foregroundColor: UIColor.appOnMainColor], for: .normal)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

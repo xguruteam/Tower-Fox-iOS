@@ -14,14 +14,11 @@ class MainTabViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForground), name: .UIApplicationWillEnterForeground, object: nil)
+        
         storage_saveObject("SYNC", "")
-        let numberOfItems = CGFloat(tabBar.items!.count)
-        let tabBarItemSize = CGSize(width: tabBar.frame.width / numberOfItems, height: tabBar.frame.height)
-        tabBar.selectionIndicatorImage = UIImage.imageWithColor(color: UIColor.appMainColor, size: tabBarItemSize).resizableImage(withCapInsets: UIEdgeInsets.zero)
-        for i in 0..<(tabBar.items?.count)!{
-            let tabItemIndex = tabBar.items![i]
-            tabItemIndex.image = tabItemIndex.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        }
+        applicationWillEnterForground()
         if isLocationEnabled() {
             LocationManager.sharedInstance.locationDelegate = self
         }else{
@@ -49,6 +46,20 @@ class MainTabViewController: UITabBarController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    @objc func applicationWillEnterForground() {
+        let numberOfItems = CGFloat(tabBar.items!.count)
+        let tabBarItemSize = CGSize(width: tabBar.frame.width / numberOfItems, height: tabBar.frame.height)
+        tabBar.selectionIndicatorImage = UIImage.imageWithColor(color: UIColor.appMainColor, size: tabBarItemSize).resizableImage(withCapInsets: UIEdgeInsets.zero)
+        for i in 0..<(tabBar.items?.count)!{
+            let tabItemIndex = tabBar.items![i]
+            tabItemIndex.image = tabItemIndex.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        }
     }
 }
 
