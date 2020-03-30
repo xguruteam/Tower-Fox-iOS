@@ -36,9 +36,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The app requires access to your location when taking photos in order to mark the location on the photos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Enable Tower Fox to access your camera roll to import photos and save ones you&apos;ve taken with the app.</string>
+	<string>Enable Tower Fox to access your camera roll to import photos and save ones you've taken with the app.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Enable Tower Fox to access your camera roll to import photos and save ones you&apos;ve taken with the app.</string>
+	<string>Enable Tower Fox to access your camera roll to import photos and save ones you've taken with the app.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ProximaNovaSoft-Bold.otf</string>
