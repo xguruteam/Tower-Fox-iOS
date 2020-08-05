@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10b-hh-DqY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10b-hh-DqY">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,10 +38,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBF-TC-HwL" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                        <rect key="frame" x="294" y="51" width="73" height="37"/>
+                                        <rect key="frame" x="302" y="51" width="65" height="37"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_right" translatesAutoresizingMaskIntoConstraints="NO" id="OPI-pE-F5I">
-                                                <rect key="frame" x="49" y="6.6666666666666643" width="16" height="24"/>
+                                                <rect key="frame" x="49" y="12.666666666666664" width="8" height="12"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os4-33-WgO">
                                                 <rect key="frame" x="8" y="9.3333333333333375" width="33" height="18.666666666666671"/>
@@ -82,7 +82,7 @@
                                 <rect key="frame" x="0.0" y="176" width="375" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example.server.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e21-JQ-k0m">
-                                        <rect key="frame" x="8" y="14.666666666666657" width="359" height="21"/>
+                                        <rect key="frame" x="8" y="14.333333333333345" width="359" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                     </textField>
@@ -172,10 +172,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vf7-Ss-buk" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                        <rect key="frame" x="293.33333333333331" y="54" width="73.666666666666686" height="34"/>
+                                        <rect key="frame" x="301.33333333333331" y="54" width="65.666666666666686" height="34"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_right" translatesAutoresizingMaskIntoConstraints="NO" id="VIA-7a-b5H">
-                                                <rect key="frame" x="49.666666666666686" y="5" width="16" height="24"/>
+                                                <rect key="frame" x="49.666666666666686" y="11" width="8" height="12"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRj-vC-i4r">
                                                 <rect key="frame" x="8" y="7.6666666666666661" width="33.666666666666664" height="18.666666666666671"/>
@@ -197,16 +197,16 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syB-Zy-Kpm" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="54" width="76.666666666666671" height="34"/>
+                                        <rect key="frame" x="8" y="54" width="68.666666666666671" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZQ-Fa-0ZS">
-                                                <rect key="frame" x="31.999999999999996" y="7.6666666666666661" width="36.666666666666657" height="18.666666666666671"/>
+                                                <rect key="frame" x="23.999999999999996" y="7.6666666666666661" width="36.666666666666657" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="16"/>
                                                 <color key="textColor" name="App-onprimary-color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back" translatesAutoresizingMaskIntoConstraints="NO" id="h8F-Rr-ud0">
-                                                <rect key="frame" x="8" y="5" width="16" height="24"/>
+                                                <rect key="frame" x="8" y="11" width="8" height="12"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -248,7 +248,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PM5-jY-pK2">
-                                                <rect key="frame" x="8" y="14.666666666666686" width="359" height="21"/>
+                                                <rect key="frame" x="8" y="14.333333333333345" width="359" height="21.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                             </textField>
@@ -594,10 +594,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llI-Qi-U6N" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                        <rect key="frame" x="292.33333333333331" y="51" width="74.666666666666686" height="37"/>
+                                        <rect key="frame" x="300.33333333333331" y="51" width="66.666666666666686" height="37"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_right" translatesAutoresizingMaskIntoConstraints="NO" id="mTG-gx-uEU">
-                                                <rect key="frame" x="50.666666666666686" y="6.6666666666666643" width="16" height="24"/>
+                                                <rect key="frame" x="50.666666666666686" y="12.666666666666664" width="8" height="12"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNB-Zg-LCF">
                                                 <rect key="frame" x="8" y="9.3333333333333375" width="36.666666666666664" height="18.666666666666671"/>
@@ -959,13 +959,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ped-9C-zsG" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                                    <rect key="frame" x="267.66666666666669" y="44" width="95.333333333333314" height="44"/>
+                                                    <rect key="frame" x="291.66666666666669" y="44" width="71.333333333333314" height="44"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera_blue" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-bu-JxK">
-                                                            <rect key="frame" x="4" y="2" width="48" height="40"/>
+                                                            <rect key="frame" x="4" y="12" width="24" height="20"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uq-6H-8vO">
-                                                            <rect key="frame" x="59" y="8" width="32.333333333333343" height="28"/>
+                                                            <rect key="frame" x="35" y="8" width="32.333333333333343" height="28"/>
                                                             <fontDescription key="fontDescription" name="ProximaNovaSoft-Medium" family="Proxima Nova Soft" pointSize="12"/>
                                                             <color key="textColor" name="category-pending"/>
                                                             <nil key="highlightedColor"/>
@@ -1128,13 +1128,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="78"/>
                                         <subviews>
                                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lSe-L0-ZZS">
-                                                <rect key="frame" x="25.666666666666671" y="12.666666666666629" width="136.33333333333331" height="38"/>
+                                                <rect key="frame" x="37.666666666666664" y="12.666666666666629" width="112.33333333333334" height="19"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_white" translatesAutoresizingMaskIntoConstraints="NO" id="ayg-u7-EUF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="38"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="19"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4O-Mv-QQO">
-                                                        <rect key="frame" x="55.999999999999993" y="0.0" width="80.333333333333314" height="38"/>
+                                                        <rect key="frame" x="32.000000000000007" y="0.0" width="80.333333333333343" height="19"/>
                                                         <fontDescription key="fontDescription" name="ProximaNovaSoft-Semibold" family="Proxima Nova Soft" pointSize="16"/>
                                                         <color key="textColor" name="App-onprimary-color"/>
                                                         <nil key="highlightedColor"/>
@@ -1169,13 +1169,13 @@
                                         <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="78"/>
                                         <subviews>
                                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AxC-3G-BIp">
-                                                <rect key="frame" x="18.666666666666686" y="12.666666666666629" width="149.66666666666666" height="38"/>
+                                                <rect key="frame" x="30.666666666666693" y="12.666666666666629" width="125.66666666666669" height="19"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_blue" translatesAutoresizingMaskIntoConstraints="NO" id="gKg-mb-g4g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="38"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="19"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rejected List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai6-JG-tFm">
-                                                        <rect key="frame" x="55.999999999999979" y="0.0" width="93.666666666666686" height="38"/>
+                                                        <rect key="frame" x="32.000000000000007" y="0.0" width="93.666666666666686" height="19"/>
                                                         <fontDescription key="fontDescription" name="ProximaNovaSoft-Semibold" family="Proxima Nova Soft" pointSize="16"/>
                                                         <color key="textColor" name="App-primary-color"/>
                                                         <nil key="highlightedColor"/>
@@ -1229,7 +1229,7 @@
                                         <rect key="frame" x="8" y="51" width="37" height="37"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tune" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-Nj-fpS">
-                                                <rect key="frame" x="0.6666666666666643" y="0.6666666666666643" width="36" height="36"/>
+                                                <rect key="frame" x="9.6666666666666679" y="9.6666666666666643" width="18" height="18"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1246,7 +1246,7 @@
                                         <rect key="frame" x="330" y="51" width="37" height="37"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add" translatesAutoresizingMaskIntoConstraints="NO" id="V5f-vy-S93">
-                                                <rect key="frame" x="4.6666666666666856" y="4.6666666666666643" width="28" height="28"/>
+                                                <rect key="frame" x="11.666666666666686" y="11.666666666666664" width="14" height="14"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1260,16 +1260,16 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXZ-Rz-4Q4" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="51" width="76.666666666666671" height="37"/>
+                                        <rect key="frame" x="8" y="51" width="68.666666666666671" height="37"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnv-zn-iU6">
-                                                <rect key="frame" x="31.999999999999996" y="9.3333333333333375" width="36.666666666666657" height="18.666666666666671"/>
+                                                <rect key="frame" x="23.999999999999996" y="9.3333333333333375" width="36.666666666666657" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="16"/>
                                                 <color key="textColor" name="App-onprimary-color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back" translatesAutoresizingMaskIntoConstraints="NO" id="E7Q-Lx-QDe">
-                                                <rect key="frame" x="8" y="6.6666666666666643" width="16" height="24"/>
+                                                <rect key="frame" x="8" y="12.666666666666664" width="8" height="12"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1285,16 +1285,16 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gD-5l-5VR" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                        <rect key="frame" x="292.66666666666669" y="51" width="74.333333333333314" height="37"/>
+                                        <rect key="frame" x="304.66666666666669" y="51" width="62.333333333333314" height="37"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-7B-leY">
-                                                <rect key="frame" x="40" y="9.3333333333333375" width="26.333333333333329" height="18.666666666666671"/>
+                                                <rect key="frame" x="28" y="9.3333333333333375" width="26.333333333333329" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="16"/>
                                                 <color key="textColor" name="App-onprimary-color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_top" translatesAutoresizingMaskIntoConstraints="NO" id="yJK-Pa-LLN">
-                                                <rect key="frame" x="8" y="10.666666666666664" width="24" height="16"/>
+                                                <rect key="frame" x="8" y="14.666666666666671" width="12" height="8"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1425,7 +1425,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync" translatesAutoresizingMaskIntoConstraints="NO" id="umi-u8-gGd">
-                                                    <rect key="frame" x="309" y="4" width="18" height="36"/>
+                                                    <rect key="frame" x="309" y="13" width="18" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="18" id="Wsq-e6-8KA"/>
                                                     </constraints>
@@ -1508,7 +1508,7 @@
         <scene sceneID="YgI-jq-y2O">
             <objects>
                 <navigationController id="v77-n2-Iju" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Projects List" image="ic_list_blue" id="jhR-2V-IcG"/>
+                    <tabBarItem key="tabBarItem" title="Projects List" image="ic_list_blue" selectedImage="ic_list_white" id="jhR-2V-IcG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zfo-gV-3R3" customClass="MKNavigationBar" customModule="Tower_Fox" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1775,7 +1775,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="mainTab" id="QEP-3s-Tyg" customClass="MainTabViewController" customModule="Tower_Fox" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="d42-iM-VkC"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oVY-J7-o7X">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oVY-J7-o7X" customClass="AppTabBar" customModule="Tower_Fox" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1795,7 +1795,7 @@
         <scene sceneID="IYP-KA-ai2">
             <objects>
                 <navigationController id="qDI-w7-wFp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rejected List" image="ic_list_blue" id="vFf-Fv-kDA"/>
+                    <tabBarItem key="tabBarItem" title="Rejected List" image="ic_list_blue" selectedImage="ic_list_white" id="vFf-Fv-kDA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TFL-ro-i9P" customClass="MKNavigationBar" customModule="Tower_Fox" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1829,7 +1829,7 @@
                                 <rect key="frame" x="0.0" y="68" width="375" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Project ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdF-5B-GXS">
-                                        <rect key="frame" x="8" y="14.666666666666671" width="359" height="21"/>
+                                        <rect key="frame" x="8" y="14.33333333333333" width="359" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1917,7 +1917,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_reject" translatesAutoresizingMaskIntoConstraints="NO" id="VWT-j8-JbL">
-                                                <rect key="frame" x="8" y="-4" width="52" height="52"/>
+                                                <rect key="frame" x="8" y="9" width="26" height="26"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Rejection Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNW-ID-TS8">
                                                 <rect key="frame" x="114.33333333333333" y="13.999999999999998" width="146.33333333333337" height="16.333333333333329"/>
@@ -2187,10 +2187,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="78"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_close" translatesAutoresizingMaskIntoConstraints="NO" id="5BH-Th-Ovg">
-                                                <rect key="frame" x="16" y="10.333333333333371" width="28" height="28"/>
+                                                <rect key="frame" x="16" y="17.333333333333371" width="14" height="14"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Photo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12q-K3-8QQ">
-                                                <rect key="frame" x="47.999999999999993" y="15.999999999999998" width="81.333333333333314" height="16.333333333333329"/>
+                                                <rect key="frame" x="33.999999999999993" y="15.999999999999998" width="81.333333333333314" height="16.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Semibold" family="Proxima Nova Soft" pointSize="14"/>
                                                 <color key="textColor" name="App-onprimary-color"/>
                                                 <nil key="highlightedColor"/>
@@ -2211,13 +2211,13 @@
                                         <rect key="frame" x="125" y="0.0" width="125" height="78"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save and Continue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ho-wl-kN4">
-                                                <rect key="frame" x="48" y="18.666666666666625" width="69" height="32.666666666666657"/>
+                                                <rect key="frame" x="48" y="6.6666666666666288" width="69" height="32.666666666666664"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Semibold" family="Proxima Nova Soft" pointSize="14"/>
                                                 <color key="textColor" name="App-onprimary-color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_forward_white" translatesAutoresizingMaskIntoConstraints="NO" id="Ewy-xb-xk7">
-                                                <rect key="frame" x="16" y="11" width="24" height="48"/>
+                                                <rect key="frame" x="16" y="11" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="jx2-mz-NEh"/>
                                                 </constraints>
@@ -2267,51 +2267,51 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review your captured photo to verify that it depicts the items you described" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raC-aA-U3w">
-                                <rect key="frame" x="58" y="109.66666666666667" width="301" height="32.666666666666671"/>
+                                <rect key="frame" x="58" y="98.666666666666671" width="301" height="32.666666666666671"/>
                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="14"/>
                                 <color key="textColor" name="Folder-label-color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_warning" translatesAutoresizingMaskIntoConstraints="NO" id="AjX-R4-7r8">
-                                <rect key="frame" x="16" y="104" width="26" height="44"/>
+                                <rect key="frame" x="16" y="104" width="26" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="v3z-rc-fDc"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F0-M0-vv4">
-                                <rect key="frame" x="0.0" y="150.33333333333334" width="375" height="0.66666666666665719"/>
+                                <rect key="frame" x="0.0" y="139.33333333333334" width="375" height="0.66666666666665719"/>
                                 <color key="backgroundColor" name="App-table-cell-seperator"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="RYS-CL-cAh"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IU8-Km-Adu">
-                                <rect key="frame" x="16" y="159" width="343" height="17.666666666666657"/>
+                                <rect key="frame" x="16" y="148" width="343" height="17.666666666666657"/>
                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6a5-oS-JXK">
-                                <rect key="frame" x="0.0" y="184.66666666666666" width="375" height="0.33333333333334281"/>
+                                <rect key="frame" x="0.0" y="173.66666666666666" width="375" height="0.33333333333334281"/>
                                 <color key="backgroundColor" name="App-table-cell-seperator"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="87I-yz-Fhd"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captured Photo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-Wq-Ug7">
-                                <rect key="frame" x="16" y="201" width="343" height="17.666666666666657"/>
+                                <rect key="frame" x="16" y="190" width="343" height="17.666666666666657"/>
                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKg-47-uQC">
-                                <rect key="frame" x="16" y="234.66666666666666" width="343" height="483.33333333333337"/>
+                                <rect key="frame" x="16" y="223.66666666666666" width="343" height="494.33333333333337"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LNy-SF-daD">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="483.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="494.33333333333331"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQH-ek-BtZ">
-                                        <rect key="frame" x="323.66666666666669" y="462.66666666666674" width="15.333333333333314" height="12.666666666666686"/>
+                                        <rect key="frame" x="323.66666666666669" y="473.66666666666674" width="15.333333333333314" height="12.666666666666686"/>
                                         <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2339,16 +2339,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abc-VD-63n" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="54" width="90" height="34"/>
+                                        <rect key="frame" x="8" y="54" width="82" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-Ok-Vcj">
-                                                <rect key="frame" x="32" y="7.6666666666666661" width="50" height="18.666666666666671"/>
+                                                <rect key="frame" x="24" y="7.6666666666666661" width="50" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="16"/>
                                                 <color key="textColor" name="App-onprimary-color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-ZB-mwl">
-                                                <rect key="frame" x="8" y="5" width="16" height="24"/>
+                                                <rect key="frame" x="8" y="11" width="8" height="12"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2457,7 +2457,7 @@
                                 <rect key="frame" x="0.0" y="96.666666666666671" width="375" height="50.000000000000014"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Photo Name (Required)" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Tdj-si-i1h">
-                                        <rect key="frame" x="12" y="14.333333333333329" width="355" height="21"/>
+                                        <rect key="frame" x="12" y="14.000000000000002" width="355" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" name="ProximaNovaSoft-Regular" family="Proxima Nova Soft" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
@@ -2866,13 +2866,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNN-Wo-2jo" customClass="MKCardView" customModule="Tower_Fox" customModuleProvider="target">
-                                                    <rect key="frame" x="267.66666666666669" y="53" width="95.333333333333314" height="44"/>
+                                                    <rect key="frame" x="291.66666666666669" y="53" width="71.333333333333314" height="44"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera_blue" translatesAutoresizingMaskIntoConstraints="NO" id="rHs-mG-ZHJ">
-                                                            <rect key="frame" x="4" y="2" width="48" height="40"/>
+                                                            <rect key="frame" x="4" y="12" width="24" height="20"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-xE-1Kt">
-                                                            <rect key="frame" x="59" y="8" width="32.333333333333343" height="28"/>
+                                                            <rect key="frame" x="35" y="8" width="32.333333333333343" height="28"/>
                                                             <fontDescription key="fontDescription" name="ProximaNovaSoft-Medium" family="Proxima Nova Soft" pointSize="12"/>
                                                             <color key="textColor" name="App-primary-color"/>
                                                             <nil key="highlightedColor"/>
@@ -2991,7 +2991,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync" translatesAutoresizingMaskIntoConstraints="NO" id="dpf-P2-q59">
-                                                    <rect key="frame" x="309" y="4" width="18" height="36"/>
+                                                    <rect key="frame" x="309" y="13" width="18" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="18" id="x8n-3z-Cto"/>
                                                     </constraints>

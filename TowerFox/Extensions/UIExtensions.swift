@@ -321,7 +321,7 @@ extension UIColor {
     
 }
 
-extension UITabBar {
+class AppTabBar: UITabBar {
     
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
         super.sizeThatFits(size)
